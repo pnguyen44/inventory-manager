@@ -12,10 +12,12 @@ actions: {
     console.log('in create item');
     console.log('newItem..', this.get('newItem'))
     console.log('category..', this.get('category'))
-    let itemObj = this.get('newItem')
-    itemObj.category= this.get('category')
-    console.log('----', itemObj)
-    this.sendAction('createItem', itemObj)
+    this.get('newItem').category = this.get('category');
+
+    // let itemObj = this.get('newItem')
+    // itemObj.category= this.get('category')
+    // console.log('----', newItem)
+    this.sendAction('createItem', this.get('newItem'))
     this.set('newItem.content',null)
   }
 }
