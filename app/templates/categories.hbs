@@ -1,29 +1,3 @@
-{{!-- <h1>categories</h1> --}}
 {{#each model as |category|}}
-  <h1>{{category.name}}</h1>
-   {{!-- <h1>{{category.items.length}}</h1> --}}
-{{!-- {{#each category.items as |item|}}
-    <h2>{{item.name}}</h2>
-  {{/each}} --}}
+  {{inventory-list category=category}}
 {{/each}}
-  {{#each model.items as |item|}}
-<table class="table table-striped">
- <thead class='thead-inverse'>
-    <tr>
-      <th>Name</th>
-      <th>Description</th>
-      <th>Current Quantity</th>
-      <th>Alert Quantity</th>
-    </tr>
-  </thead>
-  <tbody>
-    <tr>
-        <th>{{category.name}}</th>
-        <th>{{item.description}}</th>
-        <th>{{item.currentQuantity}}</th>
-        <th>{{item.alertQuantity}}</th>
-
-    </tr>
-  </tbody>
-</table>
-  {{/each}}
