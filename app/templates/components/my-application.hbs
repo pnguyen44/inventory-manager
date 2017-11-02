@@ -12,22 +12,37 @@
       </ul>
       <ul class="nav navbar-nav navbar-right">
         {{#if isAuthenticated}}
-        <li>
-          {{#link-to "categories"}}All Categories{{/link-to}}
+          <li>
+          {{#link-to "categories"}}Inventory{{/link-to}}
           </li>
+          {{!-- <li>
+          Add Category
+          </li> --}}
+          {{!-- {{#link-to ""}}Add Category{{/link-to}} --}}
 
-          <li class="dropdown">
+          {{!-- <li class="dropdown">
             <a href="#" class="dropdown-toggle" data-toggle="dropdown" role="button" aria-haspopup="true" aria-expanded="false">Category <span class="caret"></span></a>
-            <ul class="dropdown-menu">
-              <li class="text-center">{{#link-to "categories"}}All{{/link-to}}</li>
-              {{#each categories as |category|}}
+            <ul class="dropdown-menu"> --}}
+
+
+              {{!-- <li class="text-center">{{#link-to "categories"}}All{{/link-to}}</li> --}}
+              {{!-- {{#each categories as |category|}}
               <li class="text-center">{{#link-to "category" category}}{{category.name}}{{/link-to}}</li>
-              {{/each}}
-              <li role="separator" class="divider"></li>
-              <li class="text-center">Add Category</li>
+              {{/each}} --}}
+              {{!-- <li role="separator" class="divider"></li> --}}
+
+              {{!-- <li class="" data-toggle="modal" data-target="#category-form">
+                Add category
+              </li> --}}
+
+              <!-- Button trigger modal -->
+              {{!-- <button type="button" class="btn btn-primary" data-toggle="modal" data-target="#category-form">
+              </button> --}}
+
+              {{!-- <li class="text-center" data-toggle="modal" data-target="#category-form">Add Category</li> --}}
               {{!-- <li><a href="#">Create A Category</a></li> --}}
-            </ul>
-          </li>
+            {{!-- </ul> --}}
+          {{!-- </li> --}}
           <li>
             {{#link-to "change-password"}}Change Password{{/link-to}}
           </li>
@@ -44,6 +59,9 @@
     </div>
   </div>
 </nav>
+
+
+
 
 {{!-- <h1>Welcome to Ember!</h1> --}}
 
