@@ -1,4 +1,4 @@
-<h1>{{category.name}}</h1>
+<h4>{{category.name}}</h4>
 {{!-- {{inventory-list/item category=category}} --}}
 
 <table class="table table-striped">
@@ -15,10 +15,10 @@
     <tr>
         <th>{{item.name}}</th>
         <th>{{item.description}}</th>
-
-        <th>{{item.category_id}}</th>
-        <th>{{item.quantityPurchased}}</th>
+        <th>{{item.currentQuantity}}</th>
+        <th>{{item.alertQuantity}}</th>
     </tr>
     {{/each}}
   </tbody>
 </table>
+{{#link-to 'categories'}}Back To Category{{/link-to}}
