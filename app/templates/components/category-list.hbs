@@ -1,0 +1,30 @@
+<h1>Category: {{category.name}}</h1>{{!-- <h1>{{category.items.length}}</h1> --}}
+
+{{#each category.items as |item|}}
+  <h1>{{item.name}}</h1>
+  {{category-list/item item=item}}
+
+    {{!-- {{item.length}}
+  {{#each item as |i|}} --}}
+    {{!-- <table class="table table-striped">
+      <thead class='thead-inverse'>
+        <tr>
+          <th>Name</th>
+          <th>Description</th>
+          <th>Current Quantity</th>
+          <th>Alert Quantity</th>
+        </tr> --}}
+      {{!-- </thead>
+      <tbody>
+        <tr>
+          {{#each item as |i|}}
+          <th>{{i.name}}</th>
+          <th>{{i.description}}</th>
+          <th>{{i.currentQuantity}}</th>
+          <th>{{i.alertQuantity}}</th>
+          {{/each}}
+        </tr>
+      </tbody>
+    </table> --}}
+  {{/each}}
+{{!-- {{/each}} --}}
