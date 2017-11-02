@@ -1,0 +1,20 @@
+<h1>Add Item</h1>
+<form {{action "createItem" on="submit"}}>
+  <label>Item Name</label>
+  {{input
+    placeholder='New Item Name'
+    value=newItem.name}}
+  <label>Description</label>
+  {{input
+      placeholder='Description'
+      value=newItem.description}}
+  <label>Current Quantity</label>
+  {{input
+        placeholder='Current Quantity'
+        value=newItem.currentQuantity}}
+  <label>Alert Quantity</label>
+  {{input
+              placeholder='Alert Quantity'
+              value=newItem.alertQuantity}}
+  <button type='submit'>Save</button>
+</form>
