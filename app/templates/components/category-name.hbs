@@ -1,1 +1,6 @@
-<h1>{{category.name}}</h1>
+
+{{#each model as |category|}}
+  <div>
+    {{#link-to 'category' category}}{{category.name}} {{/link-to}}
+  </div>
+{{/each}}
