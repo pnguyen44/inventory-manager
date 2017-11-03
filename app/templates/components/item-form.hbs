@@ -10,11 +10,15 @@
       value=newItem.description}}
   <label>Current Quantity</label>
   {{input
-        placeholder='Current Quantity'
-        value=newItem.currentQuantity}}
+      type='number'
+      min=1
+      placeholder='Current quantity, must be a number'
+      value=newItem.currentQuantity}}
   <label>Alert Quantity</label>
   {{input
-              placeholder='Alert Quantity'
-              value=newItem.alertQuantity}}
+      type='number'
+      min=1
+      placeholder='Alert quantity, number be a number'
+      value=newItem.alertQuantity}}
   <button type='submit'>Save</button>
 </form>
