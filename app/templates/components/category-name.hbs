@@ -1,6 +1,6 @@
 
-{{#each model as |category|}}
-  <div>
-    {{#link-to 'category' category}}{{category.name}} {{/link-to}}
-  </div>
+{{#each categories as |category|}}
+
+  <p>{{#link-to 'category' category}}{{category.name}} {{/link-to}}</p>
+  {{edit-category-form category=category editCategory='editCategory'}}
 {{/each}}

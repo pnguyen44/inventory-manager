@@ -6,10 +6,11 @@ export default Ember.Route.extend({
   },
   actions: {
     createItem(item) {
-      console.log('item in list.js =', item)
+      console.log('item in list.js =', item);
       let newItem = this.get('store').createRecord('item', item);
       // console.log('newItem in list.js', newItem)
-      newItem.save()
+      newItem.save();
+
     },
   }
 });
