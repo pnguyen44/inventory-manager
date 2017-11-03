@@ -11,6 +11,10 @@ export default Ember.Component.extend({
       // console.log('----', itemObj)
       this.sendAction('createItem', item)
       // this.set('newItem.content',null)
+    },
+    editItem(item,updatedItem){
+      console.log('in inventory-list editItem action')
+      this.sendAction('editItem',item, updatedItem)
     }
   }
 });
