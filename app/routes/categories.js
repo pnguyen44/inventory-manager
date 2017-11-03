@@ -8,27 +8,36 @@ export default Ember.Route.extend({
     createCategory(category) {
       console.log('got here');
       console.log('category', category);
-      let newCategory = this.get('store').createRecord('category', category);
-      newCategory.save();
-      $('#category-form').modal('hide');
+      console.log('category name.length=', category.name)
+      // let isBlank
+      // if (category.name !== null) {
+      //   console.log('category name.length=', category.name.trim().length)
+      //   isBlank = true
+      // } else {
+      //   isBlank = false
+      // }
+      if (category.name !== null) {
+        if (category.name.trim().length) {
+          let newCategory = this.get('store').createRecord('category', category);
+          newCategory.save();
+          $('#category-form').modal('hide');
+        }
+      }
     },
-      editCategory (category, updatedName) {
-        // console.log('editCategory last stop');
-        // console.log('category', category)
-        // console.log('..', this.get('category'))
-        // console.log('categoryName', updatedName)
-        this.get('store').find('category',category.id).then(function (category) {
-          if(updatedName.trim().length){
-            category.set('name', updatedName)
-            category.save()
-            $(`#edit-category-form-${category.id}`).modal('hide');
-          }
-        })
-      },
-      deleteCategory (category) {
-        console.log('deleting');
-        category.destroyRecord();
-        $(`#deleteCategoryConfirm${category.id}`).modal('hide');
-      },
-    }
+    editCategory(category, updatedName) {
+      console.log('updatedName.length=', updatedName.length)
+      this.get('store').find('category', category.id).then(function(category) {
+        if (updatedName.trim().length) {
+          category.set('name', updatedName)
+          category.save()
+          $(`#edit-category-form-${category.id}`).modal('hide');
+        }
+      })
+    },
+    deleteCategory(category) {
+      console.log('deleting');
+      category.destroyRecord();
+      $(`#deleteCategoryConfirm${category.id}`).modal('hide');
+    },
+  }
 });
