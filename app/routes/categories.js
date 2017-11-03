@@ -15,7 +15,7 @@ export default Ember.Route.extend({
       editCategory (category, updatedName) {
         // console.log('editCategory last stop');
         // console.log('category', category)
-        // console.log('..', this.get('categories'))
+        // console.log('..', this.get('category'))
         // console.log('categoryName', updatedName)
         this.get('store').find('category',category.id).then(function (category) {
           if(updatedName.trim().length){

@@ -4,7 +4,6 @@ export default Ember.Component.extend({
   newCategoryToAdd: {
     name: null,
   },
-  title: 'cat',
   actions: {
     createCategory () {
       console.log('got here...');
