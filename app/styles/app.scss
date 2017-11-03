@@ -1,2 +1,12 @@
 @import 'bootstrap';
 @import 'bootstrap/theme';
+.table {
+  border-style: solid;
+}
+.category-wrapper{
+  width: 50%;
+  background-color: lightgrey;
+  height: 37px;
+  margin-bottom: 10px;
+  padding-top: 4px;
+}
