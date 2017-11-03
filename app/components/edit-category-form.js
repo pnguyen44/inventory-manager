@@ -8,8 +8,7 @@ export default Ember.Component.extend({
     editCategory () {
       console.log('editing');
       console.log('category', this.get('category'));
-      console.log('update category', this.get('updatedCategoryName'))
-      this.sendAction('editCategory', this.get('category'),this.get('updatedCategoryName'))
+      this.sendAction('editCategory', this.get('category'), this.get('updatedCategoryName'))
     },
   }
 });
