@@ -15,9 +15,9 @@ export default Ember.Component.extend({
   //   this.set('confirmShown', false);
   // },
   deleteCategory (){
-    $('#deleteCategoryConfirm').modal('hide')
-    console.log('category to delete', this.get('category'))
-    return this.sendAction('deleteCategory', this.get('category'))
+    $('#deleteCategoryConfirm').modal('hide');
+    console.log('category to delete', this.get('category'));
+    return this.sendAction('deleteCategory', this.get('category'));
   }
 }
 });

@@ -26,9 +26,9 @@ export default Ember.Route.extend({
         })
       },
       deleteCategory (category) {
-        console.log('deleting')
+        console.log('deleting');
         category.destroyRecord();
-        $(`#deleteCategoryConfirm${category.id}`).modal('hide')
+        $(`#deleteCategoryConfirm${category.id}`).modal('hide');
       },
     }
 });
