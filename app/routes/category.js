@@ -12,6 +12,7 @@ export default Ember.Route.extend({
           console.log('item in list.js =', item);
           let newItem = this.get('store').createRecord('item', item);
           newItem.save();
+          $('#item-form').modal('hide');
         }
       }
     },

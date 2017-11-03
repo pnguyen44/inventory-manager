@@ -1,4 +1,4 @@
-<h1>Add Item</h1>
+{{!-- <h1>Add Item</h1>
 <form {{action "createItem" on="submit"}}>
   <label>Item Name</label>
   {{input
@@ -21,4 +21,51 @@
       placeholder='Alert quantity, must be a number'
       value=newItem.alertQuantity}}
   <button type='submit'>Save</button>
-</form>
+</form> --}}
+
+<!-- Button trigger modal -->
+ <button type="button" class="btn btn-primary" data-toggle="modal" data-target="#item-form">
+  Add Item
+ </button>
+
+<!-- Modal -->
+<div class="modal fade" id="item-form" tabindex="-1" role="dialog" aria-labelledby="exampleModalLabel" aria-hidden="true">
+  <div class="modal-dialog" role="document">
+    <div class="modal-content">
+      <div class="modal-header">
+        <h5 class="modal-title" id="exampleModalLabel">Add A item</h5>
+        <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+          <span aria-hidden="true">&times;</span>
+        </button>
+      </div>
+      <div class="modal-body">
+        <form {{action "createItem" on="submit"}}>
+          <label>Item Name</label>
+          {{input
+            placeholder='Name: Required'
+            value=newItem.name}}
+          <label>Description</label>
+          {{input
+              placeholder='Description'
+              value=newItem.description}}
+          <label>Current Quantity</label>
+          {{input
+              type='number'
+              min=1
+              placeholder='Current quantity, must be a number'
+              value=newItem.currentQuantity}}
+          <label>Alert Quantity</label>
+          {{input
+              type='number'
+              min=1
+              placeholder='Alert quantity, must be a number'
+              value=newItem.alertQuantity}}
+          <div class="modal-footer">
+            <button type="submit" class="btn btn-primary">Save changes</button>
+            <button type="button" class="btn btn-secondary" data-dismiss="modal">Close</button>
+          </div>
+        </form>
+      </div>
+    </div>
+  </div>
+</div>
