@@ -10,6 +10,7 @@
       <th>Current Quantity</th>
       <th>Alert Quantity</th>
       <th></th>
+      <th></th>
     </tr>
   </thead>
   <tbody>
@@ -20,6 +21,7 @@
         <th>{{item.currentQuantity}}</th>
         <th>{{item.alertQuantity}}</th>
         <th>{{edit-item-form item=item editItem='editItem'}}</th>
+        <th>{{delete-item-button-confirm item=item deleteItem='deleteItem'}}</th>
     </tr>
     {{/each}}
   </tbody>
