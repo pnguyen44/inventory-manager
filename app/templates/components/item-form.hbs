@@ -2,7 +2,7 @@
 <form {{action "createItem" on="submit"}}>
   <label>Item Name</label>
   {{input
-    placeholder='New Item Name'
+    placeholder='Name: Required'
     value=newItem.name}}
   <label>Description</label>
   {{input
@@ -18,7 +18,7 @@
   {{input
       type='number'
       min=1
-      placeholder='Alert quantity, number be a number'
+      placeholder='Alert quantity, must be a number'
       value=newItem.alertQuantity}}
   <button type='submit'>Save</button>
 </form>

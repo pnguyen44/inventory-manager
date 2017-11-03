@@ -7,10 +7,13 @@ export default Ember.Route.extend({
   flashMessages: Ember.inject.service(),
   actions: {
     createItem(item) {
-      console.log('item in list.js =', item);
-      let newItem = this.get('store').createRecord('item', item);
-      // console.log('newItem in list.js', newItem)
-      newItem.save();
+      if (item.name !==null) {
+        if (item.name.trim().length) {
+          console.log('item in list.js =', item);
+          let newItem = this.get('store').createRecord('item', item);
+          newItem.save();
+        }
+      }
     },
     editItem (item, updatedItem) {
       console.log('get to category edit item');

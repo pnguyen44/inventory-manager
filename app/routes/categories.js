@@ -8,7 +8,7 @@ export default Ember.Route.extend({
     createCategory(category) {
       console.log('got here');
       console.log('category', category);
-      console.log('category name.length=', category.name)
+      console.log('category name.length=', category.name);
       // let isBlank
       // if (category.name !== null) {
       //   console.log('category name.length=', category.name.trim().length)
