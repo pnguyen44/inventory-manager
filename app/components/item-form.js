@@ -18,7 +18,7 @@ actions: {
     // itemObj.category= this.get('category')
     // console.log('----', newItem)
     this.sendAction('createItem', this.get('newItem'))
-    this.set('newItem.content',null)
+    this.set('newItem',null)
   }
 }
 });
