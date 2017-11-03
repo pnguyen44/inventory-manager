@@ -4,6 +4,7 @@ export default Ember.Route.extend({
   model(params) {
     return this.get('store').findRecore('category', params.category_id);
   },
+  flashMessages: Ember.inject.service(),
   actions: {
     createItem(item) {
       console.log('item in list.js =', item);
@@ -25,7 +26,14 @@ export default Ember.Route.extend({
           item.set('currentQuantity',updatedItem.currentQuantity)
           item.set('alertQuantity',updatedItem.alertQuantity)
           item.save()
+          // .catch(() => {
+          //   this.get('flashMessages')
+          //   .danger('There was a problem. Please try again.');
+          // });
           $(`#edit-item-form-${item.id}`).modal('hide')
+        // } else {
+        //   this.get('flashMessages')
+        //   .danger('Name field is required.');
         }
       })
     }

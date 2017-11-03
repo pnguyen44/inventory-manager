@@ -6,5 +6,9 @@ export default Ember.Component.extend({
       console.log('category-name edit ..', updatedName)
       return this.sendAction('editCategory',category, updatedName);
     },
+    deleteCategory (category) {
+      return this.sendAction('deleteCategory',category);
+      $(`#deleteCategoryConfirm${category.id}`);
+    }
   }
 });

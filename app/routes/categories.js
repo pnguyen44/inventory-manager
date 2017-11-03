@@ -24,7 +24,10 @@ export default Ember.Route.extend({
             $(`#edit-category-form-${category.id}`).modal('hide');
           }
         })
-        // return this.sendAction('editCategory', category);
+      },
+      deleteCategory (category) {
+        console.log('deleting')
+        category.destroyRecord();
       },
     }
 });

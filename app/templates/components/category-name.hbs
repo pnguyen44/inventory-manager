@@ -1,6 +1,14 @@
 
 {{#each categories as |category|}}
-
+<div class='category-wrapper'>
+  <div class='col-xs-8'>
   <p>{{#link-to 'category' category}}{{category.name}} {{/link-to}}</p>
+</div>
+<div class='col-xs-2'>
   {{edit-category-form category=category editCategory='editCategory'}}
+</div>
+<div class='col-xs-2'>
+  {{delete-category-button-confirm category=category deleteCategory='deleteCategory'}}
+</div>
+</div>
 {{/each}}
