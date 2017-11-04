@@ -10,7 +10,7 @@ export default Ember.Component.extend({
       // this.toggleProperty('itemTableHidden');
     },
     createItem (item){
-      console.log('inventory-list createITem');
+      console.log('item-list createITem');
       // console.log('newItem..', this.get('newItem'))
       // console.log('category..', this.get('category'))
       // let itemObj = this.get('newItem')
@@ -20,7 +20,7 @@ export default Ember.Component.extend({
       // this.set('newItem.content',null)
     },
     editItem(item,updatedItem){
-      console.log('in inventory-list editItem action');
+      console.log('in item-list editItem action');
       return this.sendAction('editItem',item, updatedItem);
     },
     deleteItem(item) {
