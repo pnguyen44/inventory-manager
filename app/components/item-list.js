@@ -3,10 +3,19 @@ import Ember from 'ember';
 export default Ember.Component.extend({
   classNameBindings: ['itemTableHidden'],
   itemTableHidden: true,
+  buttonName: 'View Item',
   actions: {
     toggleItemTable () {
       console.log('togling table')
       this.toggleProperty('itemTableHidden');
+
+      if (!this.itemTableHidden) {
+        this.set('buttonName', 'Hide Item')
+      } else {
+        this.set('buttonName','View Item')
+      }
+
+
       // this.toggleProperty('itemTableHidden');
     },
     createItem (item){
