@@ -3,7 +3,7 @@
 <table class="table table-category">
  <thead class='thead-inverse'>
     <tr>
-      <th class='th-name'>{{#link-to 'category' category}}{{category.name}} {{/link-to}}</th>
+      <th class='th-name'>{{#link-to 'category' category}}{{category.name}} ({{category.items.length}}) {{/link-to}}</th>
       <th class='th-des'></th>
       <th class='th-quant'><button type='button' {{action 'toggleItemTable'}}>View Item</button></th>
       <th class='th-quant'>{{item-form category=category createItem="createItem" }} </th>
@@ -14,7 +14,9 @@
   <tbody>
   </tbody>
 </table>
+{{#if category.items.length}}
 {{item-list category=category createItem='createItem' editItem='editItem' deleteItem='deleteItem'}}
+{{/if}}
 {{!-- <button type='button' {{action 'toggleItemTable'}}>View Item</button> --}}
 <br>
 {{/each}}
