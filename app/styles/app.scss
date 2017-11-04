@@ -1,12 +1,47 @@
 @import 'bootstrap';
 @import 'bootstrap/theme';
-.table {
-  border-style: solid;
-}
-.category-wrapper{
-  width: 50%;
+
+.category-wrapper {
+  // width: 50%;
   background-color: lightgrey;
   height: 37px;
   margin-bottom: 10px;
   padding-top: 4px;
+}
+
+.item-table-hidden :not(:first-child){
+  display: none;
+}
+// .item-table-hidden2 :not(:last-child){
+//   display: none;
+// }
+.table {
+  border-style: solid;
+}
+
+.table-category {
+  background-color: lightblue;
+  margin-bottom: -3px;
+}
+
+.table-item td, .table-item th, .item-table-header{
+  border: 1px solid;
+  border-color: lightblue;
+}
+
+.th {
+  word-wrap: break-word;
+}
+
+.th-btn {
+  width: 5%;
+}
+
+.th-des,
+.th-name {
+  width: 30%;
+}
+
+.th-quant {
+  width: 10%;
 }
