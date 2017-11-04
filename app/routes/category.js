@@ -13,7 +13,7 @@ export default Ember.Route.extend({
           let newItem = this.get('store').createRecord('item', item);
           newItem.save();
           console.log('category is', this.get('category'))
-          $(`#item-form-${category.id}`).modal('hide');
+          $(`#item-form-${item. category.id}`).modal('hide');
         }
       }
     },

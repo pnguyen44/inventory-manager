@@ -24,8 +24,7 @@ export default Ember.Component.extend({
     },
     clearEditForm () {
       console.log('get here')
-      this.set('updatedItem', null)
-      this.set('updatedName', null)
+      this.set('updatedItem.name', this.get('item.name'))
       // updatedName: Ember.computed.oneWay('item.name'),
       // updatedDescription: Ember.computed.oneWay('item.description'),
       // updatedCurrentQuantity: Ember.computed.oneWay('item.currentQuantity'),
