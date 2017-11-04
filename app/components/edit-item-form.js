@@ -20,7 +20,7 @@ export default Ember.Component.extend({
       console.log('updatedItem=..', this.get('updatedItem'));
       // this.get("item").save()
       this.sendAction('editItem',this.get('item'), this.get('updatedItem'));
-      // this.set('updatedItem', null)
+      // this.set('updatedItem', {})
     },
     clearEditForm () {
       console.log('get here')
