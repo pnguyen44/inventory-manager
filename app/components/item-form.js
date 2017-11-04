@@ -23,7 +23,7 @@ actions: {
     // itemObj.category= this.get('category')
     // console.log('----', newItem)
     this.sendAction('createItem', this.get('newItem'));
-    this.set('newItem',null);
+    this.set('newItem',{});
     console.log('newItem after reset', this.get('newItem'))
   }
 }
