@@ -1,9 +1,16 @@
 import Ember from 'ember';
 
 export default Ember.Component.extend({
+  classNameBindings: ['itemTableHidden'],
+  itemTableHidden: true,
   actions: {
+    toggleItemTable () {
+      console.log('togling table')
+      this.toggleProperty('itemTableHidden');
+      // this.toggleProperty('itemTableHidden');
+    },
     createItem (item){
-      console.log('in create item');
+      console.log('inventory-list createITem');
       // console.log('newItem..', this.get('newItem'))
       // console.log('category..', this.get('category'))
       // let itemObj = this.get('newItem')

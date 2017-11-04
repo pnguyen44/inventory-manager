@@ -39,5 +39,17 @@ export default Ember.Route.extend({
       category.destroyRecord();
       $(`#deleteCategoryConfirm${category.id}`).modal('hide');
     },
+    createItem(item) {
+      console.log('categories route createItem')
+      console.log('item is', item)
+      if (item.name !==null) {
+        if (item.name.trim().length) {
+          console.log('item in categories route =', item);
+          let newItem = this.get('store').createRecord('item', item);
+          newItem.save();
+            $(`#item-form-${item.category.id}`).modal('hide');
+        }
+      }
+    },
   }
 });

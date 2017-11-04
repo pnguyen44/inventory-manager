@@ -1,14 +1,19 @@
 
 {{#each categories as |category|}}
-<div class='category-wrapper'>
-  <div class='col-xs-8'>
-  <p>{{#link-to 'category' category}}{{category.name}} {{/link-to}}</p>
-</div>
-<div class='col-xs-2'>
-  {{edit-category-form category=category editCategory='editCategory'}}
-</div>
-<div class='col-xs-2'>
-  {{delete-category-button-confirm category=category deleteCategory='deleteCategory'}}
-</div>
-</div>
+<table class="table table-category">
+ <thead class='thead-inverse'>
+    <tr>
+      <th class='th-name'>{{#link-to 'category' category}}{{category.name}} {{/link-to}}</th>
+      <th class='th-des'></th>
+      <th class='th-quant'><button type='button' {{action 'toggleItemTable'}}>View Item</button></th>
+      <th class='th-quant'>{{item-form category=category createItem="createItem" }} </th>
+      <th class='th-btn'>{{edit-category-form category=category editCategory='editCategory'}}</th>
+      <th class='th-btn'>{{delete-category-button-confirm category=category deleteCategory='deleteCategory'}}</th>
+    </tr>
+  </thead>
+  <tbody>
+  </tbody>
+</table>
+{{inventory-list category=category createItem='createItem' editItem='editItem' deleteItem='deleteItem'}}
+{{!-- <button type='button' {{action 'toggleItemTable'}}>View Item</button> --}}
 {{/each}}
