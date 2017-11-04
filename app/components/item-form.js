@@ -25,6 +25,9 @@ actions: {
     this.sendAction('createItem', this.get('newItem'));
     this.set('newItem',{});
     console.log('newItem after reset', this.get('newItem'))
+  },
+  clearItemForm () {
+    this.set('newItem',{});
   }
 }
 });
