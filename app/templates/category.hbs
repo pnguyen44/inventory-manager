@@ -1,8 +1,10 @@
-{{!-- <h1>hi</h1> --}}
-{{item-list category=model createItem='createItem' editItem='editItem' deleteItem='deleteItem'}}
+{{!-- {{#each category as |z|}} --}}
+{{!-- <h1>{{model.name}}</h1> --}}
+{{inventory-list category=model editCategory='editCategory' deleteCategory='deleteCategory' createItem='createItem' deleteItem='deleteItem' editItem='editItem'}}
+{{!-- {{#each model as |category|}}
+  {{item-list category=category}} --}}
+{{!-- {{/each}} --}}
 {{#link-to 'categories'}}Back To Category{{/link-to}}
-
-
 
 
 {{!-- {{model.items.length}} --}}
