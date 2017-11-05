@@ -50,7 +50,7 @@
               <th>{{item.alertQuantity}}</th>
               <th>{{edit-item-form item=item editItem='editItem'}}</th>
               {{!-- <th>{{delete-item-button-confirm item=item deleteItem='deleteItem'}}</th> --}}
-              <th>Add To Cart</th>
+              <th><button {{action 'addToOrderList' item}}type='button' class='btn-primary btn-xs'>Add To Cart</button></th>
             </tr>
           {{/if}}
         {{/each}}
