@@ -3,6 +3,7 @@ import Ember from 'ember';
 export default Ember.Component.extend({
   classNameBindings: ['itemTableHidden'],
   itemTableHidden: false,
+  buttonName: 'View Items',
   actions: {
     editCategory (category, updatedName) {
       console.log('category-name edit ..', updatedName)

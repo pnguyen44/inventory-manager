@@ -10,13 +10,6 @@ export default Ember.Route.extend({
       console.log('got here');
       console.log('category', category);
       console.log('category name.length=', category.name);
-      // let isBlank
-      // if (category.name !== null) {
-      //   console.log('category name.length=', category.name.trim().length)
-      //   isBlank = true
-      // } else {
-      //   isBlank = false
-      // }
       if (category.name !== null) {
         if (category.name.trim().length) {
           let newCategory = this.get('store').createRecord('category', category);

@@ -4,7 +4,7 @@ export default Ember.Component.extend({
   classNameBindings: ['itemTableHidden'],
   buttonName: 'View Item',
   // itemTableHidden: true,
-  isShowingTable: true,
+  isShowingTable: false,
   // isShowingTable: Ember.computed('category',function () {
   //   return this.get('category.id')
   // }),
@@ -38,11 +38,12 @@ export default Ember.Component.extend({
       // if(parseInt(category.id)===31) {
         if (this.get('buttonName')==='View Item') {
           this.set('buttonName', 'Hide Item')
-          // this.set('isShowingTable', true)
+          console.log('ishowtable lll',this.get('isShowingTable'))
+          this.set('isShowingTable', true)
           // this.toggleProperty('itemTableHidden')
           // console.log('cat. id', category.id)
         } else {
-          // this.set('isShowingTable', false)
+          this.set('isShowingTable', false)
           this.set('buttonName', 'View Item')
           // this.toggleProperty('itemTableHidden')
         };
