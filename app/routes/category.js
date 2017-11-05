@@ -6,6 +6,14 @@ export default Ember.Route.extend({
   },
   flashMessages: Ember.inject.service(),
   actions: {
+    deleteCategory(category) {
+      console.log('deleting')
+      category.destroyRecord()
+      .then(() => {
+        $(`#deleteCategoryConfirm${category.id}`).modal('hide');
+        this.transitionTo('categories');
+      })
+    },
     createItem(item) {
       if (item.name !==null) {
         if (item.name.trim().length) {
