@@ -8,7 +8,9 @@
   margin-bottom: 10px;
   padding-top: 4px;
 }
-
+.isRunningLow {
+  color: red;
+}
 // .item-table-hidden :not(:first-child){
 //   display: none;
 // }
@@ -24,9 +26,11 @@
 
 .table-category {
   background-color: lightblue;
-  margin-bottom: -3px;
+//   margin-bottom: -3px;
 }
-
+.table-item {
+  margin-top: -23px;
+}
 .table-item td, .table-item th, .item-table-header{
   border: 1px solid;
   border-color: lightblue;
