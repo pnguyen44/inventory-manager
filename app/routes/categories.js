@@ -51,5 +51,10 @@ export default Ember.Route.extend({
         }
       }
     },
+    deleteItem (item) {
+      console.log('got there')
+      item.destroyRecord();
+      $(`#deleteItemConfirm${item.id}`).modal('hide');
+    },
   }
 });

@@ -1,30 +1,49 @@
 import Ember from 'ember';
 
 export default Ember.Component.extend({
-  classNameBindings: ['itemTableHidden2'],
-  itemTableHidden2: true,
-  // isShowingTable: true,
+  classNameBindings: ['itemTableHidden'],
+  buttonName: 'View Item',
+  // itemTableHidden: true,
+  isShowingTable: true,
+  // isShowingTable: Ember.computed('category',function () {
+  //   return this.get('category.id')
+  // }),
   actions: {
-    editCategory (category, updatedName) {
+    editCategory(category, updatedName) {
       console.log('category-name edit ..', updatedName)
-      return this.sendAction('editCategory',category, updatedName);
+      return this.sendAction('editCategory', category, updatedName);
     },
-    deleteCategory (category) {
-      return this.sendAction('deleteCategory',category);
+    deleteCategory(category) {
+      return this.sendAction('deleteCategory', category);
       $(`#deleteCategoryConfirm${category.id}`);
     },
-    createItem (item) {
+    createItem(item) {
       console.log('category-name createItem')
-      return this.sendAction('createItem',item)
+      return this.sendAction('createItem', item)
     },
-    toggleItemTable () {
-      console.log('tog table')
-      console.log('tooge item hiden', this.get('itemTableHidden2'))
-      // this.toggleProperty('isShowingTable');
-      return this.toggleProperty('itemTableHidden2');
-      // if (this.get('isShowingTable')) {
-      //   this.set('isShowingTable', false)
-      // } else {
+    deleteItem (item) {
+      return this.sendAction('deleteItem', item)
+    },
+    toggleItemTable(category) {
+      console.log('togling table in category-name')
+      // console.log('category.id', category.id)
+      console.log('isShowingTable',this.get('isShowingTable'))
+      let target = Ember.$(this)
+      console.log('target',target)
+      Ember.$(this).css('color','yellow')
+      // if(parseInt(category.id)===31) {
+        if (this.get('buttonName')==='View Item') {
+          this.set('buttonName', 'Hide Item')
+          // this.set('isShowingTable', true)
+          // this.toggleProperty('itemTableHidden')
+          // console.log('cat. id', category.id)
+        } else {
+          // this.set('isShowingTable', false)
+          this.set('buttonName', 'View Item')
+          // this.toggleProperty('itemTableHidden')
+        };
+      // }
+      // if (category.id ===31) {
       //   this.set('isShowingTable', true)
       // }
     },
