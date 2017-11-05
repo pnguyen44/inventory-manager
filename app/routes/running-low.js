@@ -15,9 +15,9 @@ export default Ember.Route.extend({
           item.save()
             .then(() => {
               console.log('item has been saved in cart')
-              // Ember.$(`#add-to-order-list-form-${item.id}`).modal('hide');
-              Ember.$('.message').html('Sucess!!')
-              Ember.$('.message').delay(1000).fadeOut('slow')
+              Ember.$(`#add-to-order-list-form-${item.id}`).modal('hide');
+              // Ember.$('.message').html('Sucess!!')
+              // Ember.$('.message').delay(1000).fadeOut('slow')
             })
             .catch(() => {
               Ember.$('.message').show()
