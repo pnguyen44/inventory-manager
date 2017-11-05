@@ -6,14 +6,15 @@ export default Ember.Route.extend({
   },
   // ishow: true,
   actions: {
-    addToOrderList(item) {
-      console.log('get there')
+    addToOrderList(item,purchasedQuantity) {
+      console.log('get there finally')
       this.get('store').find('item', item.id)
       .then(function(item){
           item.set('inOrderList', true)
+          item.set('purchasedQuantity', purchasedQuantity)
           item.save()
           console.log('item has been saved in cart')
-          console.log('item.inOrderList ===', this.get('item'))
+          // console.log('item.inOrderList ===', this.get('item'))
         });
       },
   }

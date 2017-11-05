@@ -53,7 +53,7 @@
               {{#if item.isInOrderList}}
                 <th>In Cart</th>
               {{else}}
-                <th><{{add-to-order-list-form item=item}}</th>
+                <th><{{add-to-order-list-form item=item addToOrderList='addToOrderList'}}</th>
               {{/if}}
             </tr>
           {{/if}}

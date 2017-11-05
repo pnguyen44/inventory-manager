@@ -25,12 +25,12 @@ export default Ember.Component.extend({
           // this.toggleProperty('itemTableHidden')
         };
     },
-    addToOrderList (item) {
+    addToOrderList (item,purchasedQuantity) {
       console.log('adding start')
       console.log('item.id', item.id)
       console.log('compute prop isInOrderList', this.get('item.inOrderList'))
       // this.set('isInOrderList',true);
-      return this.sendAction('addToOrderList', item)
+      return this.sendAction('addToOrderList', item, purchasedQuantity)
     },
   }
 
