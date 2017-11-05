@@ -31,14 +31,7 @@ export default Ember.Route.extend({
           item.set('currentQuantity',updatedItem.currentQuantity);
           item.set('alertQuantity',updatedItem.alertQuantity);
           item.save();
-          // .catch(() => {
-          //   this.get('flashMessages')
-          //   .danger('There was a problem. Please try again.');
-          // });
           $(`#edit-item-form-${item.id}`).modal('hide');
-        // } else {
-        //   this.get('flashMessages')
-        //   .danger('Name field is required.');
         }
       });
     },

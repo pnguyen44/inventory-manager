@@ -21,6 +21,10 @@ export default Ember.Component.extend({
       console.log('category-name createItem')
       return this.sendAction('createItem', item)
     },
+    editItem(item, updatedItem) {
+      console.log('in cate editItem action');
+      return this.sendAction('editItem', item, updatedItem);
+    },
     deleteItem (item) {
       return this.sendAction('deleteItem', item)
     },

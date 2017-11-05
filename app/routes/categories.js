@@ -51,6 +51,24 @@ export default Ember.Route.extend({
         }
       }
     },
+    editItem (item, updatedItem) {
+      console.log('get to category edit item');
+      console.log('item.id', item.id);
+      console.log('updateditem=',updatedItem);
+      let itemName= updatedItem.name;
+      console.log('itemName', itemName);
+
+      this.get('store').findRecord('item', item.id).then(function (item) {
+        if(updatedItem.name.trim().length){
+          item.set('name',updatedItem.name);
+          item.set('description',updatedItem.description);
+          item.set('currentQuantity',updatedItem.currentQuantity);
+          item.set('alertQuantity',updatedItem.alertQuantity);
+          item.save();
+          $(`#edit-item-form-${item.id}`).modal('hide');
+        }
+      });
+    },
     deleteItem (item) {
       console.log('got there')
       item.destroyRecord();
