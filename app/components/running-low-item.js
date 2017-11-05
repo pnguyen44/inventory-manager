@@ -5,9 +5,6 @@ export default Ember.Component.extend({
   //   return this.get('item.name')
   // }),
   buttonName: 'View Item',
-  // test: 'blue',
-
-
   test: Ember.computed('item',function () {
     // let items = this.get('item')
     return this.get('item.name')
@@ -31,5 +28,26 @@ export default Ember.Component.extend({
   //     return false
   //   }
   // }),
-  name: 'blue'
+  actions: {
+    toggleItemTable(category) {
+      console.log('togling table in running-low-item')
+      // console.log('category.id', category.id)
+      console.log('isShowingTable',this.get('isShowingTable'))
+      let target = Ember.$(this)
+      console.log('target',target)
+      Ember.$(this).css('color','yellow')
+      // if(parseInt(category.id)===31) {
+        if (this.get('buttonName')==='View Item') {
+          this.set('buttonName', 'Hide Item')
+          console.log('ishowtable lll',this.get('isShowingTable'))
+          this.set('isShowingTable', true)
+        } else {
+          this.set('isShowingTable', false)
+          this.set('buttonName', 'View Item')
+          // this.toggleProperty('itemTableHidden')
+        };
+    },
+  }
+
+
 });
