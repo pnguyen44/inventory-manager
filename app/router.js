@@ -13,6 +13,7 @@ Router.map(function () {
   this.route('categories');
   this.route('category',{path: 'categories/:category_id'},function (){});
   this.route('running-low');
+  this.route('order-list');
 });
 
 export default Router;
