@@ -13,8 +13,17 @@ export default Ember.Route.extend({
           item.set('inOrderList', true)
           item.set('quantityPurchased', quantityPurchased)
           item.save()
-          console.log('item has been saved in cart')
-          Ember.$(`#add-to-order-list-form-${item.id}`).modal('hide');
+            .then(() => {
+              console.log('item has been saved in cart')
+              // Ember.$(`#add-to-order-list-form-${item.id}`).modal('hide');
+              Ember.$('.message').html('Sucess!!')
+              Ember.$('.message').delay(1000).fadeOut('slow')
+            })
+            .catch(() => {
+              Ember.$('.message').show()
+              Ember.$('.message').html('Error on add to order list')
+              Ember.$('.message').delay(1000).fadeOut('slow')
+            })
           // console.log('item.inOrderList ===', this.get('item'))
         });
       },
