@@ -9,10 +9,17 @@ export default Ember.Component.extend({
 
   actions: {
     editItem () {
-      console.log('item before', this.get('item'));
-      console.log('item after', this.get('item'));
-      console.log('item', this.get('item'));
-      console.log('updatedName', this.get('updatedName'));
+      console.log('item name', this.get('item.name'));
+      let newName = this.get('updatedName')
+      console.log('newName', newName);
+      if (newName !== undefined) {
+        if(newName.trim().length ===0) {
+          console.log('get here...')
+          Ember.$('.message').show()
+          this.set('message', 'Name Required')
+          Ember.$('.message').delay(1000).fadeOut('slow')
+        }
+      }
       this.get('updatedItem').name = this.get('updatedName');
       this.get('updatedItem').description = this.get('updatedDescription');
       this.get('updatedItem').currentQuantity = this.get('updatedCurrentQuantity');
@@ -22,9 +29,12 @@ export default Ember.Component.extend({
       this.sendAction('editItem',this.get('item'), this.get('updatedItem'));
       // this.set('updatedItem', {})
     },
-    clearEditForm () {
+    setCurrentItem () {
       console.log('get here')
-      this.set('updatedItem.name', this.get('item.name'))
+      this.set('updatedName', this.get('item.name'))
+      this.set('updatedDescription', this.get('item.description'))
+      this.set('updatedCurrentQuantity', this.get('item.currentQuantity'))
+      this.set('updatedAlertQuantity', this.get('item.alertQuantity'))
       // updatedName: Ember.computed.oneWay('item.name'),
       // updatedDescription: Ember.computed.oneWay('item.description'),
       // updatedCurrentQuantity: Ember.computed.oneWay('item.currentQuantity'),
