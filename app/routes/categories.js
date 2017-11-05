@@ -36,16 +36,12 @@ export default Ember.Route.extend({
     createItem(item) {
       console.log('categories route createItem')
       console.log('item is', item)
-      if (item.name !== undefined) {
+      if (item.name !== null && item.name !==undefined) {
         if (item.name.trim().length) {
           console.log('item in categories route =', item);
           let newItem = this.get('store').createRecord('item', item);
           newItem.save();
           $(`#item-form-${item.category.id}`).modal('hide');
-        } else {
-          console.log('this level')
-          this.set('message', 'Name Required')
-          Ember.$('.message').delay(1000).fadeOut('slow')
         }
       }
     },
