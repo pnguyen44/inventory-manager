@@ -8,8 +8,13 @@
       <th class='th-name th-category-name'>{{#link-to 'category' category}}{{category.name}} ({{category.items.length}}) {{/link-to}}</th>
       <th class='th-des'></th>
       {{!-- <th class='th-quant'><button type='button' {{action 'toggleItemTable' category}}>{{buttonName}}</button></th> --}}
-      <th class='th-quant'><button type='button' {{action 'toggleItemTable' category}}>{{buttonName}}</button></th>
-      <th class='th-quant'>{{item-form category=category createItem="createItem" }} </th>
+      {{#unless hide}}
+        {{#if category.items.length}}
+        <th class='th-quant'><button type='button' {{action 'toggleItemTable' category}}>{{buttonName}}</button></th>
+        {{else}}
+        <th class='th-quant'></th>
+        {{/if}}
+      {{/unless}}    <th class='th-quant'>{{item-form category=category createItem="createItem" }} </th>
       <th class='th-btn'>{{edit-category-form category=category editCategory='editCategory'}}</th>
       <th class='th-btn'>{{delete-category-button-confirm category=category deleteCategory='deleteCategory'}}</th>
     </tr>
