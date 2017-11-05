@@ -47,10 +47,6 @@ export default Ember.Component.extend({
           this.set('buttonName', 'View Item')
           // this.toggleProperty('itemTableHidden')
         };
-      // }
-      // if (category.id ===31) {
-      //   this.set('isShowingTable', true)
-      // }
     },
   }
 });
