@@ -13,7 +13,7 @@ export default Ember.Route.extend({
           item.set('inOrderList', true)
           item.save()
           console.log('item has been saved in cart')
-          // console.log('item.inOrderList ===', this.get('item'))
+          console.log('item.inOrderList ===', this.get('item'))
         });
       },
   }

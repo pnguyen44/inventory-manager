@@ -2,6 +2,10 @@ import Ember from 'ember';
 
 export default Ember.Component.extend({
   buttonName: 'View Item',
+  isInOrderList: Ember.computed.alias('item.inOrderList'),
+  isInOrderList: Ember.computed('item', function () {
+    return this.get('item.inOrderList')
+  }),
   actions: {
     toggleItemTable(category) {
       // console.log('togling table in running-low-item')
@@ -24,6 +28,8 @@ export default Ember.Component.extend({
     addToOrderList (item) {
       console.log('adding start')
       console.log('item.id', item.id)
+      console.log('compute prop isInOrderList', this.get('item.inOrderList'))
+      // this.set('isInOrderList',true);
       return this.sendAction('addToOrderList', item)
     },
   }

@@ -48,9 +48,13 @@
               <th>{{item.description}}</th>
               <th>{{item.currentQuantity}}</th>
               <th>{{item.alertQuantity}}</th>
-              <th>{{edit-item-form item=item editItem='editItem'}}</th>
+              <th></th>
               {{!-- <th>{{delete-item-button-confirm item=item deleteItem='deleteItem'}}</th> --}}
-              <th><button {{action 'addToOrderList' item}}type='button' class='btn-primary btn-xs'>Add To Cart</button></th>
+              {{#if item.isInOrderList}}
+                <th>In Cart</th>
+              {{else}}
+                <th><{{add-to-order-list-form item=item}}</th>
+              {{/if}}
             </tr>
           {{/if}}
         {{/each}}
