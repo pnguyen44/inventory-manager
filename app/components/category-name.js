@@ -1,12 +1,15 @@
 import Ember from 'ember';
 
 export default Ember.Component.extend({
-  classNameBindings: ['itemTableHidden'],
-  buttonName: 'View Item',
+  // classNameBindings: ['itemTableHidden'],
+  // buttonName: 'View Item',
   // itemTableHidden: true,
-  isShowingTable: false,
+  // isShowingTable: false,
   // isShowingTable: Ember.computed('category',function () {
   //   return this.get('category.id')
+  // }),
+  // isRunningLow: Ember.computed('currentQuantity', 'alertQuantity', function () {
+
   // }),
   actions: {
     editCategory(category, updatedName) {

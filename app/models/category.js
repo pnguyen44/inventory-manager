@@ -8,4 +8,14 @@ export default DS.Model.extend({
     let items = this.hasMany('items');
     return items.ids().length === 0;
   }),
+  hasRunningLowItem: Ember.computed('items', function () {
+    // let items = this.wehasMany('items');
+    let itemsArr = []
+    let counter =0
+    this.get('items').forEach(function (item, index, enumerable) {
+      itemsArr.push(item);
+    }, this);
+
+    return itemsArr
+  })
 });
