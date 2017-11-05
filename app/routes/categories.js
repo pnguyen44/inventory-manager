@@ -68,19 +68,5 @@ export default Ember.Route.extend({
       item.destroyRecord();
       $(`#deleteItemConfirm${item.id}`).modal('hide');
     },
-    launchConfirmDialog() {
-      console.log('clicked')
-      this.set('confirmShown', true);
-      console.log(this.get('confirmShown'))
-    },
-
-    submitConfirm() {
-      // trigger action on parent component
-      this.set('confirmShown', false);
-    },
-
-    cancelConfirm() {
-      this.set('confirmShown', false);
-    },
   }
 });
