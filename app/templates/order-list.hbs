@@ -1,5 +1,4 @@
 <h1>Order List</h1>
 {{#each model as |category|}}
-{{running-low-item category=category item=item addToOrderList='addToOrderList'}}
-{{-- {{/each}} --}}
+{{order-list-listing category=category item=item addToOrderList='addToOrderList'}}
 {{/each}}

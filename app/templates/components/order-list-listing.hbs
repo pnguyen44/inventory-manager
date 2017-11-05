@@ -1,0 +1,66 @@
+{{!-- <h1>{{test}}</h1> --}}
+{{!-- <h1>{{category.hasRunningLowItems}}</h1> --}}
+{{#if category.hasRunningLowItems}}
+  <table class="table table-category">
+    <thead class='thead-inverse'>
+      <tr>
+        <th class='th-name th-category-name'>
+          {{#link-to 'category' category}}{{category.name}} ({{category.items.length}}) {{/link-to}}
+        </th>
+        <th class='th-des'></th>
+        <th class='th-quant'></th>
+        <th class='th-btn'></th>
+        <th class='th-btn'></th>
+        {{!-- <th class='th-quant'><button type='button' {{action 'toggleItemTable' category}}>{{buttonName}}</button></th> --}}
+        {{#unless hide}}
+          {{#if category.items.length}}
+            <th class='th-quant'><button type='button' {{action 'toggleItemTable' category}}>{{buttonName}}</button></th>
+          {{else}}
+            <th class='th-quant'></th>
+          {{/if}}
+        {{/unless}}
+
+      </tr>
+    </thead>
+    <tbody>
+    </tbody>
+  </table>
+
+  {{#if isShowingTable}}
+
+    <table class="table table-striped table-item">
+      <thead class='thead-inverse item-table-header'>
+        <tr>
+          <th class='th-name'>Name</th>
+          <th class='th-des'>Description</th>
+          <th class='th-quant'>Current Quantity</th>
+          <th class='th-quant'>Alert Quantity</th>
+          <th class='th-btn'>Purchased Quantity</th>
+          <th class='th-btn'></th>
+          {{!-- <th class='th-btn'></th> --}}
+        </tr>
+      </thead>
+      <tbody>
+        {{#each category.items as |item|}}
+          {{#if item.isLow}}
+            <tr>
+              <th>{{item.name}}</th>
+              <th>{{item.description}}</th>
+              <th>{{item.currentQuantity}}</th>
+              <th>{{item.alertQuantity}}</th>
+              <th>{{item.quantityPurchased}}</th>
+              {{!-- <th>{{delete-item-button-confirm item=item deleteItem='deleteItem'}}</th> --}}
+              {{#if item.isInOrderList}}
+                <th>In Cart</th>
+              {{else}}
+                <th><{{add-to-order-list-form item=item addToOrderList='addToOrderList'}}</th>
+              {{/if}}
+            </tr>
+          {{/if}}
+        {{/each}}
+      </tbody>
+    </table>
+  {{/if}}
+{{/if}}
+{{!-- <button type='button' {{action 'toggleItemTable'}}>View Item</button> --}}
+{{!-- <br> --}}
