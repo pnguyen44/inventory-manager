@@ -1,4 +1,13 @@
-{{!-- {{#each categories as |category|}} --}}
-{{category-name category=category editCategory='editCategory' deleteCategory='deleteCategory' createItem='createItem'}}
+
+{{#each categories as |category|}}
+{{category-name category=category editCategory='editCategory' deleteCategory='deleteCategory' createItem='createItem' deleteItem='deleteItem' editItem='editItem'}}
+
+{{#if category.items.length}}
+{{!-- {{#if isShowingTable}} --}}
 {{item-list category=category createItem='createItem' editItem='editItem' deleteItem='deleteItem'}}
-{{!-- {{/each}} --}}
+{{!-- {{/if}} --}}
+{{/if}}
+<br>
+{{!-- <button type='button' {{action 'toggleItemTable'}}>View Item</button> --}}
+{{!-- <br> --}}
+{{/each}}

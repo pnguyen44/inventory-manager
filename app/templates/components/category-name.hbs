@@ -1,5 +1,4 @@
 
-{{#each categories as |category|}}
 <table class="table table-category">
  <thead class='thead-inverse'>
     <tr>
@@ -15,14 +14,6 @@
   <tbody>
   </tbody>
 </table>
-<div>
-{{#if category.items.length}}
-{{!-- {{#if isShowingTable}} --}}
-{{item-list category=category createItem='createItem' editItem='editItem' deleteItem='deleteItem'}}
-{{!-- {{/if}} --}}
-{{/if}}
-</div>
-<br>
+
 {{!-- <button type='button' {{action 'toggleItemTable'}}>View Item</button> --}}
 {{!-- <br> --}}
-{{/each}}
