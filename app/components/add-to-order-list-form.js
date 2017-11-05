@@ -14,7 +14,7 @@ actions: {
     console.log('quantityPurchased--', quantityPurchased)
     if(quantityPurchased===undefined || quantityPurchased===null){
       Ember.$('.message').show()
-      this.set('message', 'Purchased Quanity Required')
+      this.set('message', 'Ordered Quanity Required')
       Ember.$('.message').delay(1000).fadeOut('slow')
     }
     return this.sendAction('addToOrderList', item, this.get('quantityPurchased'))
