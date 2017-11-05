@@ -12,6 +12,7 @@ Router.map(function () {
   this.route('users');
   this.route('categories');
   this.route('category',{path: 'categories/:category_id'},function (){});
+  this.route('running-low');
 });
 
 export default Router;
