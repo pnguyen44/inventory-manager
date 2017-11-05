@@ -22,6 +22,8 @@
         </button>
       </div>
       <div class="modal-body">
+        <div class="message">{{message}}</div>
+        <br>
         <form {{action "createCategory" on="submit"}}>
           <label>New Category</label> {{input
             placeholder='Name: Requred'
