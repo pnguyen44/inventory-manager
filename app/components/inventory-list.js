@@ -37,8 +37,6 @@ export default Ember.Component.extend({
           this.set('buttonName', 'Hide Item')
           console.log('ishowtable lll',this.get('isShowingTable'))
           this.set('isShowingTable', true)
-          // this.toggleProperty('itemTableHidden')
-          // console.log('cat. id', category.id)
         } else {
           this.set('isShowingTable', false)
           this.set('buttonName', 'View Item')
