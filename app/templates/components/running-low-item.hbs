@@ -1,7 +1,7 @@
 {{!-- <h1>{{test}}</h1> --}}
-{{!-- <h1>{{category.hasRunningLowItem}}</h1> --}}
+{{!-- <h1>{{category.hasRunningLowItems}}</h1> --}}
 
-
+{{#if category.hasRunningLowItems}}
 <table class="table table-category">
  <thead class='thead-inverse'>
     <tr>
@@ -14,7 +14,7 @@
         {{else}}
         <th class='th-quant'></th>
         {{/if}}
-      {{/unless}}    <th class='th-quant'>{{item-form category=category createItem="createItem" }} </th>
+      {{/unless}}<th class='th-quant'>{{item-form category=category createItem="createItem" }} </th>
       <th class='th-btn'>{{edit-category-form category=category editCategory='editCategory'}}</th>
       <th class='th-btn'>{{delete-category-button-confirm category=category deleteCategory='deleteCategory'}}</th>
     </tr>
@@ -51,6 +51,7 @@
     {{/each}}
   </tbody>
 </table>
+{{/if}}
 {{/if}}
 {{!-- <button type='button' {{action 'toggleItemTable'}}>View Item</button> --}}
 {{!-- <br> --}}
