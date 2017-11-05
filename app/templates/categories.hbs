@@ -1,7 +1,18 @@
+
+<button {{action "launchConfirmDialog"}}>show item </button>
+{{#if confirmShown}}
+  <div class="confirm-dialog">
+    <button class="confirm-submit" {{action "submitConfirm"}}>OK</button>
+    <button class="confirm-cancel" {{action "cancelConfirm"}}>Cancel</button>
+  </div>
+{{/if}}
+
+
 <h1>Categories</h1>
 {{category-form createCategory="createCategory"}}
 <br>
-{{inventory-list categories=model editCategory='editCategory' deleteCategory='deleteCategory' createItem='createItem' deleteItem='deleteItem' editItem='editItem'}}
+{{#each model as |category|}}
+{{inventory-list category=category editCategory='editCategory' deleteCategory='deleteCategory' createItem='createItem' deleteItem='deleteItem' editItem='editItem'}}
 {{!-- {{#each model as |category|}}
-  {{item-list category=category}}
-{{/each}} --}}
+  {{item-list category=category}} --}}
+{{/each}}
