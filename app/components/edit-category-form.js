@@ -16,5 +16,10 @@ export default Ember.Component.extend({
       this.sendAction('editCategory', this.get('category'), this.get('updatedCategoryName'));
       this.set('updatedCategoryName', '');
     },
+    getCurrentCategory () {
+      console.log('cat s ==', this.get('category.name'))
+      let categoryName = this.get('category.name')
+      this.set('updatedCategoryName',categoryName)
+    },
   }
 });
