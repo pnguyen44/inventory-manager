@@ -1,27 +1,27 @@
 <!-- Button trigger modal -->
- <button type="button" {{action 'getCurrentValue'}} class="btn btn-primary btn-xs" data-toggle="modal" data-target="#edit-request-quantity-form-{{item.id}}">
+ <button type="button" {{action 'getCurrentValue' item}} class="btn btn-primary btn-xs" data-toggle="modal" data-target="#edit-requested-quantity-form-{{item.id}}">
   Edit Req Qty
  </button>
 
 <!-- Modal -->
-<div class="modal fade" id="edit-request-quantity-form-{{item.id}}" tabindex="-1" role="dialog" aria-labelledby="exampleModalLabel" aria-hidden="true">
+<div class="modal fade" id="edit-requested-quantity-form-{{item.id}}" tabindex="-1" role="dialog" aria-labelledby="exampleModalLabel" aria-hidden="true">
   <div class="modal-dialog" role="document">
     <div class="modal-content">
       <div class="modal-header">
-        <h5 class="modal-title" id="exampleModalLabel">Edit Request Quantity {{item.name}} Category: {{category.name}}</h5>
+        <h5 class="modal-title" id="exampleModalLabel">Edit Item: {{item.name}} Category: {{category.name}}</h5>
         <button type="button" class="close" data-dismiss="modal" aria-label="Close">
           <span aria-hidden="true">&times;</span>
         </button>
       </div>
       <div class="modal-body">
         <div class='message'>{{message}}</div>
-        <form  {{action 'addToOrderList' item on='submit'}}>
-          <label>Required Quantity</label> {{input
+        <form  {{action 'editRequestedQty' item on='submit'}}>
+          <label>Requested Quantity</label> {{input
             type='number'
             min=1
             value=quantityPurchased}}
           <div class="modal-footer">
-            <button type="submit" class="btn btn-primary">Add</button>
+            <button type="submit" class="btn btn-primary">Save</button>
             <button type="button" class="btn btn-secondary" data-dismiss="modal">Cancel</button>
           </div>
         </form>

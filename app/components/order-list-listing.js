@@ -18,5 +18,8 @@ export default Ember.Component.extend({
           // this.toggleProperty('itemTableHidden')
         };
     },
+    editRequestedQty (item, quantityPurchased) {
+      return this.sendAction('editRequestedQty', item, quantityPurchased )
+    },
   }
 });
