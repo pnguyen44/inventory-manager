@@ -20,8 +20,8 @@ export default Ember.Route.extend({
               })
               .catch(() => {
                 Ember.$('.message').show()
-                Ember.$('.message').html('Error on edit reqeuest quantity')
-                Ember.$('.message').delay(1000).fadeOut('slow')
+                Ember.$('.message').html('Error on edit reqeuested quantity')
+                Ember.$('.message').delay(1300).fadeOut('slow')
               })
           });
       }
@@ -42,7 +42,7 @@ export default Ember.Route.extend({
             .catch(() => {
               Ember.$('.message').show()
               Ember.$('.message').html('Error on remove item from order list')
-              Ember.$('.message').delay(1050).fadeOut('slow')
+              Ember.$('.message').delay(1300).fadeOut('slow')
             })
         });
     },
@@ -63,7 +63,7 @@ export default Ember.Route.extend({
             .catch(() => {
               Ember.$('.message').show()
               Ember.$('.message').html('Error on send to inventory')
-              Ember.$('.message').delay(1050).fadeOut('slow')
+              Ember.$('.message').delay(1300).fadeOut('slow')
             })
         });
     },
