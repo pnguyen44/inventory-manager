@@ -48,9 +48,11 @@ export default Ember.Route.extend({
     },
     deleteCategory(category) {
       console.log('deleting');
-      category.destroyRecord();
-      Ember.$(".modal-backdrop").remove()
-      Ember.$(`#deleteCategoryConfirm${category.id}`).modal('hide');
+      category.destroyRecord()
+      .then(() => {
+        Ember.$(".modal-backdrop").remove()
+        Ember.$(`#deleteCategoryConfirm${category.id}`).modal('hide');
+      })
     },
     createItem(item) {
       console.log('categories route createItem')
@@ -102,9 +104,11 @@ export default Ember.Route.extend({
     },
     deleteItem(item) {
       console.log('got there')
-      item.destroyRecord();
-      Ember.$(".modal-backdrop").remove()
-      Ember.$(`#deleteItemConfirm${item.id}`).modal('hide');
+      item.destroyRecord()
+        .then(() => {
+          Ember.$(".modal-backdrop").remove()
+          Ember.$(`#deleteItemConfirm${item.id}`).modal('hide');
+        })
     },
   }
 });
