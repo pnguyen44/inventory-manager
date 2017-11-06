@@ -2,10 +2,10 @@ import Ember from 'ember';
 
 export default Ember.Component.extend({
   buttonName: 'View Item',
-  isInOrderList: Ember.computed.alias('item.inOrderList'),
-  isInOrderList: Ember.computed('item', function () {
-    return this.get('item.inOrderList')
-  }),
+  // isInOrderList: Ember.computed.alias('item.inOrderList'),
+  // isInOrderList: Ember.computed('item', function () {
+  //   return this.get('item.inOrderList')
+  // }),
   actions: {
     toggleItemTable(category) {
       // console.log('togling table in running-low-item')
