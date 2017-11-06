@@ -1,5 +1,5 @@
 <!-- Button trigger modal -->
-<button type="button" {{action 'clearForm'}} class="btn btn-success btn-xs" data-toggle="modal" data-target="#sendToInventory{{item.id}}">
+<button type="button" {{action 'getCurrentValue'}} class="btn btn-success btn-xs" data-toggle="modal" data-target="#sendToInventory{{item.id}}">
   Send To Inventory
 </button>
 
@@ -14,6 +14,7 @@
         </button>
       </div>
       <div class="modal-body">
+        <div class='message'>{{message}}</div>
         <form  {{action 'sendToInventory' item on='submit'}}>
           <label>Purchased Amount</label> {{input
             type='number'

@@ -24,8 +24,8 @@ export default Ember.Component.extend({
     removeFromOrderList (item) {
       return this.sendAction('removeFromOrderList', item)
     },
-    // sendToInventory (item) {
-    //
-    // },
+    sendToInventory (item,updatedItem) {
+      return this.sendAction('sendToInventory', item, updatedItem)
+    },
   }
 });
