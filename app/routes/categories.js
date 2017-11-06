@@ -91,7 +91,7 @@ export default Ember.Route.extend({
       console.log('itemName', itemName);
 
       this.get('store').findRecord('item', item.id).then(function(item) {
-          if (updatedItem.name.trim().length && updatedItem.currentQuantity === 0 || updatedItem.currentQuantity === undefined) {
+          if (updatedItem.name.trim().length && updatedItem.currentQuantity !== undefined || updatedItem.currentQuantity !== null) {
             item.set('name', updatedItem.name);
             item.set('description', updatedItem.description);
             item.set('currentQuantity', updatedItem.currentQuantity);
