@@ -50,7 +50,7 @@
               <th>{{item.quantityPurchased}}</th>
               {{!-- <th>{{delete-item-button-confirm item=item deleteItem='deleteItem'}}</th> --}}
               {{#if item.inOrderList}}
-                <th class='th-cart-info'>In Order List</th>
+                <th class='th-cart-info'>{{#link-to "order-list"}}In Order List{{/link-to}}</th>
               {{else}}
                 <th class='th-cart-info'><{{add-to-order-list-form item=item addToOrderList='addToOrderList'}}</th>
               {{/if}}
