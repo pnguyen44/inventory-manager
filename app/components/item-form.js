@@ -14,7 +14,8 @@ export default Ember.Component.extend({
       console.log('category..', this.get('category'));
       let newItemName = this.get('newItem.name')
       console.log('new it em is', newItemName)
-
+      let currentQuantity = Number(this.get('newItem.currentQuantity'))
+      console.log('currentQuantity is -', currentQuantity)
       if (newItemName!==undefined && newItemName !== null) {
         if (newItemName.trim().length) {
           this.get('newItem').category = this.get('category');

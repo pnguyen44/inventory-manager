@@ -18,4 +18,9 @@ export default DS.Model.extend({
       return item.get('inOrderList');
     })
   }),
+  // hasRunningLowCategorys: Ember.computed('category.@each.{currentQuantity,alertQuantity}', function() {
+  //   return this.get('items').any(function(item) {
+  //     return item.get('currentQuantity') <= item.get('alertQuantity');
+  //   })
+  // }),
 });
