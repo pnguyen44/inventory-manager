@@ -15,7 +15,7 @@ export default Ember.Component.extend({
       if(quantityPurchased===undefined || quantityPurchased===null || quantityPurchased>=0){
         Ember.$('.message').show()
         this.set('message', 'Requested quantity is required and must be greater than 0')
-        Ember.$('.message').delay(1050).fadeOut('slow')
+        Ember.$('.message').delay(1200).fadeOut('slow')
       }
       return this.sendAction('editRequestedQty', item, this.get('quantityPurchased'))
     },

@@ -12,10 +12,10 @@ actions: {
     console.log('compute prop isInOrderList', this.get('item.inOrderList'))
     let quantityPurchased = this.get('quantityPurchased')
     console.log('quantityPurchased--', quantityPurchased)
-    if(quantityPurchased===undefined || quantityPurchased===null){
+    if(quantityPurchased===undefined || quantityPurchased===null ||quantityPurchased <= 0){
       Ember.$('.message').show()
-      this.set('message', 'Requested Quantity Required')
-      Ember.$('.message').delay(1000).fadeOut('slow')
+      this.set('message', 'Requested quantity required and must be greater than 0')
+      Ember.$('.message').delay(1200).fadeOut('slow')
     }
     return this.sendAction('addToOrderList', item, this.get('quantityPurchased'))
   },
