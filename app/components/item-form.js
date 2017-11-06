@@ -16,6 +16,10 @@ export default Ember.Component.extend({
       let newCurrentQty = this.get('newItem.currentQuantity')
       console.log('new it em is', newItemName)
       let currentQuantity = Number(this.get('newItem.currentQuantity'))
+      let alertQuantity = this.get('newItem.alertQuantity')
+      if(alertQuantity===undefined || alertQuantity===null) {
+        this.get('newItem').alertQuantity = 0
+      }
       console.log('currentQuantity is -', currentQuantity)
       if (newItemName!==undefined && newItemName !== null) {
         if (newItemName.trim().length && newCurrentQty!==0 || newCurrentQty!==undefined ) {
