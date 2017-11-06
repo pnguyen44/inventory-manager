@@ -15,12 +15,13 @@ export default Ember.Route.extend({
           let newCategory = this.get('store').createRecord('category', category);
           newCategory.save()
           .then(() => {
-            $('#category-form').modal('hide');
+            Ember.$(".modal-backdrop").remove()
+            Ember.$('#category-form').modal('hide');
           })
           .catch(() => {
             newCategory.rollbackAttributes()
             Ember.$('.message').show()
-            Ember.$('.message').html('Error on add category')
+            Ember.$('.message').html('Error on create category')
             Ember.$('.message').delay(1300).fadeOut('slow')
           })
         }
@@ -32,14 +33,24 @@ export default Ember.Route.extend({
         if (updatedName.trim().length) {
           category.set('name', updatedName)
           category.save()
-          $(`#edit-category-form-${category.id}`).modal('hide');
+          .then(() => {
+            Ember.$(".modal-backdrop").remove()
+            Ember.$(`#edit-category-form-${category.id}`).modal('hide');
+          })
+          .catch(() => {
+            category.rollbackAttributes()
+            Ember.$('.message').show()
+            Ember.$('.message').html('Error on edit category')
+            Ember.$('.message').delay(1300).fadeOut('slow')
+          })
         }
       })
     },
     deleteCategory(category) {
       console.log('deleting');
       category.destroyRecord();
-      $(`#deleteCategoryConfirm${category.id}`).modal('hide');
+      Ember.$(".modal-backdrop").remove()
+      Ember.$(`#deleteCategoryConfirm${category.id}`).modal('hide');
     },
     createItem(item) {
       console.log('categories route createItem')
@@ -48,8 +59,17 @@ export default Ember.Route.extend({
         if (item.name.trim().length) {
           console.log('item in categories route =', item);
           let newItem = this.get('store').createRecord('item', item);
-          newItem.save();
-          $(`#item-form-${item.category.id}`).modal('hide');
+          newItem.save()
+            .then(() => {
+              Ember.$(".modal-backdrop").remove()
+              Ember.$(`#item-form-${item.category.id}`).modal('hide');
+            })
+            .catch(() => {
+              newItem.rollbackAttributes()
+              Ember.$('.message').show()
+              Ember.$('.message').html('Error on create item')
+              Ember.$('.message').delay(1300).fadeOut('slow')
+            })
         }
       }
     },
@@ -66,15 +86,25 @@ export default Ember.Route.extend({
           item.set('description', updatedItem.description);
           item.set('currentQuantity', updatedItem.currentQuantity);
           item.set('alertQuantity', updatedItem.alertQuantity);
-          item.save();
-          $(`#edit-item-form-${item.id}`).modal('hide');
+          item.save()
+          .then(() => {
+            Ember.$(".modal-backdrop").remove()
+            Ember.$(`#edit-item-form-${item.id}`).modal('hide');
+          })
+          .catch(() => {
+            item.rollbackAttributes()
+            Ember.$('.message').show()
+            Ember.$('.message').html('Error on edit item')
+            Ember.$('.message').delay(1300).fadeOut('slow')
+          })
         }
       });
     },
     deleteItem(item) {
       console.log('got there')
       item.destroyRecord();
-      $(`#deleteItemConfirm${item.id}`).modal('hide');
+      Ember.$(".modal-backdrop").remove()
+      Ember.$(`#deleteItemConfirm${item.id}`).modal('hide');
     },
   }
 });
