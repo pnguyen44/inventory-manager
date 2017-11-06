@@ -1,4 +1,4 @@
 <h1>Order List</h1>
 {{#each model as |category|}}
-{{order-list-listing orderListView=true category=category item=item editRequestedQty='editRequestedQty' removeFromOrderList='removeFromOrderList'}}
+{{order-list-listing orderListView=true category=category item=item editRequestedQty='editRequestedQty' removeFromOrderList='removeFromOrderList' sendToInventory='sendToInventory'}}
 {{/each}}
