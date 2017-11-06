@@ -1,7 +1,7 @@
 import Ember from 'ember';
 
 export default Ember.Component.extend({
-  buttonName: 'View Item',
+  buttonName: 'View Item(s)',
   // isInOrderList: Ember.computed.alias('item.inOrderList'),
   // isInOrderList: Ember.computed('item', function () {
   //   return this.get('item.inOrderList')
@@ -15,13 +15,13 @@ export default Ember.Component.extend({
       // console.log('target',target)
       Ember.$(this).css('color','yellow')
       // if(parseInt(category.id)===31) {
-        if (this.get('buttonName')==='View Item') {
-          this.set('buttonName', 'Hide Item')
+        if (this.get('buttonName')==='View Item(s)') {
+          this.set('buttonName', 'Hide Item(s)')
           // console.log('ishowtable lll',this.get('isShowingTable'))
           this.set('isShowingTable', true)
         } else {
           this.set('isShowingTable', false)
-          this.set('buttonName', 'View Item')
+          this.set('buttonName', 'View Item(s)')
           // this.toggleProperty('itemTableHidden')
         };
     },
