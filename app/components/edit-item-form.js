@@ -12,6 +12,11 @@ export default Ember.Component.extend({
       console.log('item name', this.get('item.name'));
       let newName = this.get('updatedName')
       console.log('newName', newName);
+      let updatedAlertQuantity= this.get('updatedAlertQuantity')
+      console.log('updatedAlertQuantity--', updatedAlertQuantity)
+      if (updatedAlertQuantity===null || updatedAlertQuantity===undefined || updatedAlertQuantity==='') {
+        this.set('updatedAlertQuantity',0)
+      }
       if (newName !== undefined) {
         if(newName.trim().length ===0) {
           console.log('get here...')
