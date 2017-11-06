@@ -13,4 +13,9 @@ export default DS.Model.extend({
       return item.get('currentQuantity') <= item.get('alertQuantity');
     })
   }),
+  hasOrderedItems: Ember.computed('items.@each.{inOrderList}', function() {
+    return this.get('items').any(function(item) {
+      return item.get('inOrderList');
+    })
+  }),
 });
