@@ -35,7 +35,8 @@ export default Ember.Route.extend({
             .then(() => {
               console.log('remove form order list sucess')
               console.log('item.id is==', item.id)
-              Ember.$(`#remove-from-order-list-form${item.id}`).modal('hide');
+              Ember.$(".modal-backdrop").remove()
+              Ember.$(`#remove-from-order-list-form${item.id}`).hide();
             })
             .catch(() => {
               Ember.$('.message').show()
