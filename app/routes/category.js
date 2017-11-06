@@ -18,9 +18,9 @@ export default Ember.Route.extend({
     createItem(item) {
       console.log('categories route createItem')
       console.log('item is', item)
-      console.log('item currentQuantity--' ,item.currentQuantity)
+      console.log('item currentQuantity--', item.currentQuantity)
       if (item.name !== null && item.name !== undefined) {
-        if (item.name.trim().length && item.currentQuantity>0) {
+        if (item.name.trim().length && item.currentQuantity > 0) {
           console.log('item in categories route =', item);
           let newItem = this.get('store').createRecord('item', item);
           newItem.save()
@@ -34,10 +34,10 @@ export default Ember.Route.extend({
               Ember.$('.message').html('Error on create item')
               Ember.$('.message').delay(1300).fadeOut('slow')
             })
-          } else if (item.currentQuantity===0 ||item.currentQuantity===undefined) {
-            Ember.$('.message').show()
-            Ember.$('.message').html('Name and current quantity required')
-            Ember.$('.message').delay(1300).fadeOut('slow')
+        } else if (item.currentQuantity === 0 || item.currentQuantity === undefined) {
+          Ember.$('.message').show()
+          Ember.$('.message').html('Name and current quantity required')
+          Ember.$('.message').delay(1300).fadeOut('slow')
         }
       }
     },
@@ -49,31 +49,35 @@ export default Ember.Route.extend({
       console.log('itemName', itemName);
 
       this.get('store').findRecord('item', item.id).then(function(item) {
-        if (updatedItem.name.trim().length) {
-          item.set('name', updatedItem.name);
-          item.set('description', updatedItem.description);
-          item.set('currentQuantity', updatedItem.currentQuantity);
-          item.set('alertQuantity', updatedItem.alertQuantity);
-          item.save()
-            .then(() => {
-              Ember.$(".modal-backdrop").remove()
-              Ember.$(`#edit-item-form-${item.id}`).modal('hide');
-            })
-            .catch(() => {
-              item.rollbackAttributes()
+          if (updatedItem.name.trim().length && updatedItem.currentQuantity === 0 || updatedItem.currentQuantity === undefined) {
+            item.set('name', updatedItem.name);
+            item.set('description', updatedItem.description);
+            item.set('currentQuantity', updatedItem.currentQuantity);
+            item.set('alertQuantity', updatedItem.alertQuantity);
+            item.save()
+              .then(() => {
+                Ember.$(".modal-backdrop").remove()
+                Ember.$(`#edit-item-form-${item.id}`).modal('hide');
+              })
+              .catch(() => {
+                item.rollbackAttributes()
+                Ember.$('.message').show()
+                Ember.$('.message').html('Error on edit item')
+                Ember.$('.message').delay(1300).fadeOut('slow')
+              })
+            } else {
               Ember.$('.message').show()
-              Ember.$('.message').html('Error on edit item')
+              Ember.$('.message').html('Name and current quantity required')
               Ember.$('.message').delay(1300).fadeOut('slow')
-            })
-        }
+          }
       });
-    },
-    deleteItem(item) {
-      item.destroyRecord()
-        .then(() => {
-          Ember.$(".modal-backdrop").remove()
-          Ember.$(`#deleteItemConfirm${item.id}`).modal('hide');
-        })
-    }
+  },
+  deleteItem(item) {
+    item.destroyRecord()
+      .then(() => {
+        Ember.$(".modal-backdrop").remove()
+        Ember.$(`#deleteItemConfirm${item.id}`).modal('hide');
+      })
   }
+}
 });
