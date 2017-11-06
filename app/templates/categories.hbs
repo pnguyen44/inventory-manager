@@ -1,6 +1,10 @@
 {{!-- <h1>Categories</h1> --}}
 {{category-form createCategory="createCategory"}}
 <br>
+{{#unless model.length}}
+  <h4>You don't have any category. Please add some.</h4>
+{{/unless}}
+{{!-- <h1>{{model}}</h1> --}}
 {{#each model as |category|}}
 {{inventory-list category=category editCategory='editCategory' deleteCategory='deleteCategory' createItem='createItem' deleteItem='deleteItem' editItem='editItem'}}
 {{!-- {{#each model as |category|}}

@@ -2,7 +2,10 @@ import Ember from 'ember';
 
 export default Ember.Route.extend({
   model() {
+    // return this.get('store').findAll('category');
+    // console.log(this.get('store').findAll('category').count())
     return this.get('store').findAll('category');
+
   },
   confirmShown: true,
   actions: {
