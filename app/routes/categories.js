@@ -13,8 +13,16 @@ export default Ember.Route.extend({
       if (category.name !== null) {
         if (category.name.trim().length) {
           let newCategory = this.get('store').createRecord('category', category);
-          newCategory.save();
-          $('#category-form').modal('hide');
+          newCategory.save()
+          .then(() => {
+            $('#category-form').modal('hide');
+          })
+          .catch(() => {
+            newCategory.rollbackAttributes()
+            Ember.$('.message').show()
+            Ember.$('.message').html('Error on add category')
+            Ember.$('.message').delay(1300).fadeOut('slow')
+          })
         }
       }
     },

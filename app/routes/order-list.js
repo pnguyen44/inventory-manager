@@ -15,6 +15,7 @@ export default Ember.Route.extend({
             item.save()
               .then(() => {
                 console.log('reqeuest quan edied sucess')
+                Ember.$(".modal-backdrop").remove()
                 Ember.$(`#edit-requested-quantity-form-${item.id}`).modal('hide');
               })
               .catch(() => {

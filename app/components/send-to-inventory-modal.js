@@ -14,6 +14,12 @@ export default Ember.Component.extend({
       let reqeuestedQuantity = Number(item.get('quantityPurchased'))
 
       let purchasedAmount = this.get('purchasedAmount')
+      if (purchasedAmount ==='') {
+        Ember.$('.message').show()
+        this.set('message', 'Purchased amount is required and must be more than 0')
+        Ember.$('.message').delay(1500).fadeOut('slow')
+      }
+
     let currentQty= Number(item.get('currentQuantity'));
       console.log('reqeuestQuantity is -', reqeuestedQuantity)
       console.log('purchasedAmount is -', purchasedAmount)
@@ -27,21 +33,22 @@ export default Ember.Component.extend({
         Ember.$('.message').delay(1500).fadeOut('slow')
       } else {
         purchasedAmount = Number(this.get('purchasedAmount'))
-        let reqeuestedQuantityUpdateAmt = reqeuestedQuantity - purchasedAmount
-        console.log('reqeuestQuantityUpdateAmt =', reqeuestedQuantityUpdateAmt)
-        if(reqeuestedQuantityUpdateAmt<=0 ) {
-          this.get('updatedItem').quantityPurchased = 0
-          this.get("updatedItem").inOrderList=false
-        } else {
-          this.get("updatedItem").quantityPurchased = reqeuestedQuantityUpdateAmt
-          this.get("updatedItem").inOrderList=true
+        if(purchasedAmount !== 0) {
+          let reqeuestedQuantityUpdateAmt = reqeuestedQuantity - purchasedAmount
+          console.log('reqeuestQuantityUpdateAmt =', reqeuestedQuantityUpdateAmt)
+          if(reqeuestedQuantityUpdateAmt<=0 ) {
+            this.get('updatedItem').quantityPurchased = 0
+            this.get("updatedItem").inOrderList=false
+          } else {
+            this.get("updatedItem").quantityPurchased = reqeuestedQuantityUpdateAmt
+            this.get("updatedItem").inOrderList=true
+          }
+          this.get('updatedItem').currentQuantity= currentQty + purchasedAmount
+
+          // console.log('inOrderList is -', this.get('updatedItem').inOrderList)
+          console.log('updatedItem--', this.get('updatedItem'))
+          return this.sendAction('sendToInventory', item, this.get('updatedItem'))
         }
-        this.get('updatedItem').currentQuantity= currentQty + purchasedAmount
-
-        // console.log('inOrderList is -', this.get('updatedItem').inOrderList)
-        console.log('updatedItem--', this.get('updatedItem'))
-        return this.sendAction('sendToInventory', item, this.get('updatedItem'))
-
       }
 
     },
