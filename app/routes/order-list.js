@@ -25,5 +25,24 @@ export default Ember.Route.extend({
         });
       }
     },
+    removeFromOrderList (item) {
+      this.get('store').find('item', item.id)
+      .then(function(item){
+          // item.set('inOrderList', true)
+          item.set('quantityPurchased', 0)
+          item.set('inOrderList', false)
+          item.save()
+            .then(() => {
+              console.log('remove form order list sucess')
+              console.log('item.id is==', item.id)
+              Ember.$(`#remove-from-order-list-form${item.id}`).modal('hide');
+            })
+            .catch(() => {
+              Ember.$('.message').show()
+              Ember.$('.message').html('Error on remove item from order list')
+              Ember.$('.message').delay(1050).fadeOut('slow')
+            })
+        });
+      },
   }
 });

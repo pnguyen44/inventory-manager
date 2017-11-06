@@ -21,5 +21,8 @@ export default Ember.Component.extend({
     editRequestedQty (item, quantityPurchased) {
       return this.sendAction('editRequestedQty', item, quantityPurchased )
     },
+    removeFromOrderList (item) {
+      return this.sendAction('removeFromOrderList', item)
+    },
   }
 });
