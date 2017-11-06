@@ -12,7 +12,7 @@ export default Ember.Component.extend({
       // console.log('compute prop isInOrderList', this.get('item.inOrderList'))
       let quantityPurchased = this.get('quantityPurchased')
       console.log('quantityPurchased--', quantityPurchased)
-      if(quantityPurchased===undefined || quantityPurchased===null || quantityPurchased>=0){
+      if(quantityPurchased===undefined || quantityPurchased===null || quantityPurchased<=0){
         Ember.$('.message').show()
         this.set('message', 'Requested quantity is required and must be greater than 0')
         Ember.$('.message').delay(1200).fadeOut('slow')
