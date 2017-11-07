@@ -6,8 +6,6 @@ export default Ember.Component.extend({
   }),
   actions: {
     editCategory() {
-      console.log('editing');
-      console.log('category', this.get('category'));
       if (this.get('updatedCategoryName').trim().length === 0) {
         this.set('message', 'Name Required')
         Ember.$('.message').show()
@@ -17,7 +15,6 @@ export default Ember.Component.extend({
       this.set('updatedCategoryName', '');
     },
     getCurrentCategory () {
-      console.log('cat s ==', this.get('category.name'))
       let categoryName = this.get('category.name')
       this.set('updatedCategoryName',categoryName)
     },

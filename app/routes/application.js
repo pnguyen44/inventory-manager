@@ -1,12 +1,8 @@
 import Ember from 'ember';
 
 export default Ember.Route.extend({
-  // model () {
-  //   return this.get('store').findAll('category');
-  // },
   auth: Ember.inject.service(),
   flashMessages: Ember.inject.service(),
-
   actions: {
     signOut () {
       this.get('auth').signOut()
@@ -34,7 +30,6 @@ export default Ember.Route.extend({
         this.get('flashMessages')
         .danger('There was a problem. Please try again.');
       }
-
       return false;
     },
   },

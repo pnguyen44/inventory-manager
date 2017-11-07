@@ -6,10 +6,7 @@ export default Ember.Component.extend({
   },
   actions: {
     createCategory() {
-      console.log('got here...');
-      console.log('tite=', this.get('title'));
       let newName = this.get('newCategoryToAdd.name')
-      console.log('new name ==', newName)
       if (newName !== undefined && newName !== null ) {
         if (newName.trim().length === 0) {
           this.set('message', 'Name Required')

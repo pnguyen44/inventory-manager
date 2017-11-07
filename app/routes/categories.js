@@ -7,9 +7,6 @@ export default Ember.Route.extend({
   confirmShown: true,
   actions: {
     createCategory(category) {
-      console.log('got here');
-      console.log('category', category);
-      console.log('category name.length=', category.name);
       if (category.name !== null) {
         if (category.name.trim().length) {
           let newCategory = this.get('store').createRecord('category', category);
@@ -28,7 +25,6 @@ export default Ember.Route.extend({
       }
     },
     editCategory(category, updatedName) {
-      console.log('updatedName.length=', updatedName.length)
       this.get('store').find('category', category.id).then(function(category) {
         if (updatedName.trim().length) {
           category.set('name', updatedName)
@@ -47,7 +43,6 @@ export default Ember.Route.extend({
       })
     },
     deleteCategory(category) {
-      console.log('deleting');
       category.destroyRecord()
       .then(() => {
         Ember.$(".modal-backdrop").remove()
@@ -55,11 +50,7 @@ export default Ember.Route.extend({
       })
     },
     createItem(item) {
-      console.log('categories route createItem')
-      console.log('item is', item)
-      console.log('item currentQuantity--', item.currentQuantity)
       if (item.name.trim().length && item.currentQuantity !== undefined && item.currentQuantity !== null && item.currentQuantity !== '') {
-          console.log('item in categories route =', item);
           item.currentQuantity=Number(item.currentQuantity)
           item.alertQuantity=Number(item.alertQuantity)
           item.quantityPurchased=0
@@ -82,12 +73,7 @@ export default Ember.Route.extend({
         }
     },
     editItem(item, updatedItem) {
-      console.log('get to category edit item');
-      console.log('item.id', item.id);
-      console.log('updateditem=', updatedItem);
       let itemName = updatedItem.name;
-      console.log('itemName', itemName);
-      console.log('currentQuantity is ..', updatedItem.currentQuantity)
       if(updatedItem.alertQuantity==='' || updatedItem.alertQuantity===null || updatedItem.alertQuantity === undefined) {
         updatedItem.alertQuantity=0
       }
@@ -116,7 +102,6 @@ export default Ember.Route.extend({
       });
     },
     deleteItem(item) {
-      console.log('got there')
       item.destroyRecord()
         .then(() => {
           Ember.$(".modal-backdrop").remove()
