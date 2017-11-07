@@ -29,17 +29,22 @@ h1, h4 {
 .modal-title {
   font-size: 18px;
 }
+.navbar {
+  background-color: #082449;
+  color: white;
+}
 .table {
   border: 3px;
 }
 
 .table-category {
-  background-color: lightblue;
+  // background-color: lightblue;
+    background-color: #92d3e5;
 //   margin-bottom: -3px;
 }
 .table-item {
   margin-top: -23px;
-  // background-color: #d7dsde5;
+  // background-color: lightyellow;
 }
 .table-item td, .table-item th, .item-table-header{
   border: 1px solid;

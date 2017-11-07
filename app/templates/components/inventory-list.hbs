@@ -14,8 +14,8 @@
       {{#unless hide}}
         {{#if category.items.length}}
         <th class='th-view-btn'><button class='btn btn-primary btn-xs' type='button' {{action 'toggleItemTable' category}}>{{buttonName}}</button></th>
-        {{else}}
-        <th class='th-view-btn'></th>
+          {{else}}
+          <th class='th-view-btn'></th>
         {{/if}}
       {{/unless}}
       <th class='th-btn'>{{item-form category=category createItem="createItem" }} </th>
