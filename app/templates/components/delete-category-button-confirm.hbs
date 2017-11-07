@@ -1,14 +1,4 @@
 
-{{!--
-<button class='btn-danger btn-xs'{{action "launchConfirmDialog"}}>{{text}}</button>
-{{#if confirmShown}}
-  <div class="confirm-dialog">
-    <button class="confirm-submit" {{action "submitConfirm"}}>OK</button>
-    <button class="confirm-cancel" {{action "cancelConfirm"}}>Cancel</button>
-  </div>
-{{/if}}
- --}}
-
 <!-- Button trigger modal -->
 <button type="button" class="btn btn-danger btn-xs" data-toggle="modal" data-target="#deleteCategoryConfirm{{category.id}}">
   Delete

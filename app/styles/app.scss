@@ -10,15 +10,29 @@
   margin-bottom: 10px;
   padding-top: 4px;
 }
-.content-box {
-  width: 75%;
-}
+// .container-box {
+//   width: 75%;
+// }
 h1, h4 {
   text-align: center;
+}
+img {
+  width: 50%;
 }
 .isRunningLow {
   color: red;
 }
+
+.title {
+  text-align: center;
+  font-size: 50px;
+  margin-bottom: 30px;
+}
+div.image {
+  content:url("https://i.imgur.com/lpbyBg3.jpg");
+  height: 50%;
+}
+
 // .item-table-hidden :not(:first-child){
 //   display: none;
 // }
@@ -30,6 +44,15 @@ h1, h4 {
 }
 .modal-title {
   font-size: 18px;
+}
+.name-container {
+  padding-top: 40px;
+  border: 1px solid;
+  border-style: groove;
+  width: 500px;
+  height: 200px;
+  margin: auto 0;
+  content: attr('');
 }
 .navbar {
   background-color: #1385a9;
