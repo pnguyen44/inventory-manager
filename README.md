@@ -66,19 +66,3 @@ The first thing I did was create a user story and wireframe to map out my invent
 
 ## Unsolved Problems and Future Plans
 I would like to show the “Inventory” view when the user signs in.
-
-
-
-
-
-
-Both front-end and back-end repos should include README's with:
- # An explanation of the what the app does and how it works.
- # A link to the other repo
-  # A link to both deployed sites
- #List of technologies used
- # List unsolved problems which would be fixed in future iterations.
- #Document your planning, process and problem-solving strategy
-Your front-end repo's README should also have:
- Link to wireframes and user stories
- An embedded screenshot of the app
