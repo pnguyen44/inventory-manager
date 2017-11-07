@@ -1,6 +1,8 @@
 @import 'bootstrap';
 @import 'bootstrap/theme';
-
+// a{
+//   color: white;
+// }
 .category-wrapper {
   // width: 50%;
   background-color: lightgrey;
@@ -30,9 +32,10 @@ h1, h4 {
   font-size: 18px;
 }
 .navbar {
-  background-color: #082449;
+  background-color: #1385a9;
   color: white;
 }
+
 .table {
   border: 3px;
 }
