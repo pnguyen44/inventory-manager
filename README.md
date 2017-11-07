@@ -65,4 +65,4 @@ The first thing I did was create a user story and wireframe to map out my invent
 - Ember Documentation
 
 ## Unsolved Problems and Future Plans
-I would like to show the “Inventory” view when the user signs in.
+I would like to show the “Inventory” view when the user signs in. In addition, I would like users to be able to get email notification about runniing low items.
