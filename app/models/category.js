@@ -10,12 +10,24 @@ export default DS.Model.extend({
   }),
   hasRunningLowItems: Ember.computed('items.@each.{currentQuantity,alertQuantity}', function() {
     return this.get('items').any(function(item) {
-      return item.get('currentQuantity') <= item.get('alertQuantity');
+      return Number(item.get('currentQuantity')) <= Number(item.get('alertQuantity'));
     })
   }),
   hasOrderedItems: Ember.computed('items.@each.{inOrderList}', function() {
     return this.get('items').any(function(item) {
       return item.get('inOrderList');
     })
+  }),
+  orderedItemsCount: Ember.computed('items.@each.{inOrderList}', function() {
+    const itemsInOrderListArray = this.get('items').filter(function(item) {
+      return item.get('inOrderList');
+    })
+    return itemsInOrderListArray.length
+  }),
+  runningLowItemsCount: Ember.computed('items.@each.{currentQuantity,alertQuantity}', function() {
+    const itemsInRunningLowListArray = this.get('items').filter(function(item) {
+      return Number(item.get('currentQuantity')) <= Number(item.get('alertQuantity'))
+    })
+    return itemsInRunningLowListArray.length
   }),
 });
