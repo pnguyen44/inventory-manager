@@ -8,6 +8,9 @@
   margin-bottom: 10px;
   padding-top: 4px;
 }
+.content-box {
+  width: 75%;
+}
 h1, h4 {
   text-align: center;
 }
@@ -27,7 +30,7 @@ h1, h4 {
   font-size: 18px;
 }
 .table {
-  border-style: solid;
+  border: 3px;
 }
 
 .table-category {
@@ -36,6 +39,7 @@ h1, h4 {
 }
 .table-item {
   margin-top: -23px;
+  // background-color: #d7dsde5;
 }
 .table-item td, .table-item th, .item-table-header{
   border: 1px solid;
@@ -50,16 +54,21 @@ h1, h4 {
   width: 5%;
 }
 
-.th-des,
+.th-des {
+  width: 35%;
+}
 .th-name {
-  width: 30%;
+  width: 25%;
   // font-size: 20px;
 }
 .th-category-name {
   font-size: 20px;
 }
 .th-cart-info {
-  width: 13%;
+  width: 11%;
+}
+.th-requested {
+  width: 5%;
 }
 .th-quant {
   width: 10%;
