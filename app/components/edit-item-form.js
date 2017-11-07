@@ -13,17 +13,28 @@ export default Ember.Component.extend({
       let newName = this.get('updatedName')
       console.log('newName', newName);
       let updatedAlertQuantity= this.get('updatedAlertQuantity')
+      let updatedCurrentQuantity = this.get('updatedCurrentQuantity')
       console.log('updatedAlertQuantity--', updatedAlertQuantity)
-      if (updatedAlertQuantity===null || updatedAlertQuantity===undefined || updatedAlertQuantity==='') {
-        this.set('updatedAlertQuantity',0)
-      }
-      if (newName !== undefined) {
+      // if (updatedAlertQuantity===null || updatedAlertQuantity===undefined || updatedAlertQuantity==='') {
+      //   this.set('updatedAlertQuantity',0)
+      // }
+      console.log('currentQuantity--', this.get('currentQuantity'))
+      // if (currentQuantity===null || currentQuantity===undefined || currentQuantity==='') {
+      //   this.set('updatedAlertQuantity',0)
+      // }
+      console.log(newName.trim().length)
+
+      if (newName !== undefined || newName === null || newName === '') {
         if(newName.trim().length ===0) {
           console.log('get here...')
           Ember.$('.message').show()
-          this.set('message', 'Name Required')
+          this.set('message', 'Name required')
           Ember.$('.message').delay(1000).fadeOut('slow')
         }
+      } else if(updatedCurrentQuantity===undefined || updatedCurrentQuantity === null || updatedCurrentQuantity ==='') {
+        Ember.$('.message').show()
+        this.set('message', 'Current quantity required')
+        Ember.$('.message').delay(1000).fadeOut('slow')
       }
       this.get('updatedItem').name = this.get('updatedName');
       this.get('updatedItem').description = this.get('updatedDescription');
@@ -32,7 +43,7 @@ export default Ember.Component.extend({
       console.log('updatedItem=..', this.get('updatedItem'));
       // this.get("item").save()
       this.sendAction('editItem',this.get('item'), this.get('updatedItem'));
-      // this.set('updatedItem', {})
+      this.set('updatedItem', {})
     },
     setCurrentItem () {
       console.log('get here')

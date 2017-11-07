@@ -27,14 +27,14 @@
           <label>Current Quantity</label>
           {{input
               type='number'
-              min=1
-              placeholder='Current quantity required and must be a number greater than 0'
+              min=0
+              placeholder='Current quantity required'
               value=newItem.currentQuantity}}
           <label>Alert Quantity</label>
           {{input
               type='number'
-              min=1
-              placeholder='Alert quantity must be a number greater than 0'
+              min=0
+              placeholder='Alert quantity'
               value=newItem.alertQuantity}}
           <div class="modal-footer">
             <button type="submit" class="btn btn-primary">Add</button>

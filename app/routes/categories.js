@@ -2,10 +2,7 @@ import Ember from 'ember';
 
 export default Ember.Route.extend({
   model() {
-    // return this.get('store').findAll('category');
-    // console.log(this.get('store').findAll('category').count())
     return this.get('store').findAll('category');
-
   },
   confirmShown: true,
   actions: {
@@ -61,8 +58,7 @@ export default Ember.Route.extend({
       console.log('categories route createItem')
       console.log('item is', item)
       console.log('item currentQuantity--', item.currentQuantity)
-      if (item.name !== null && item.name !== undefined) {
-        if (item.name.trim().length && item.currentQuantity > 0) {
+      if (item.name.trim().length && item.currentQuantity !== undefined && item.currentQuantity !== null && item.currentQuantity !== '') {
           console.log('item in categories route =', item);
           let newItem = this.get('store').createRecord('item', item);
           newItem.save()
@@ -76,12 +72,12 @@ export default Ember.Route.extend({
               Ember.$('.message').html('Error on create item')
               Ember.$('.message').delay(1300).fadeOut('slow')
             })
-        } else if (item.currentQuantity === 0 || item.currentQuantity === undefined) {
+        } else {
           Ember.$('.message').show()
           Ember.$('.message').html('Name and current quantity required')
-          Ember.$('.message').delay(1300).fadeOut('slow')
+          Ember.$('.message').delay(1400).fadeOut('slow')
         }
-      }
+      // }
     },
     editItem(item, updatedItem) {
       console.log('get to category edit item');
@@ -89,31 +85,34 @@ export default Ember.Route.extend({
       console.log('updateditem=', updatedItem);
       let itemName = updatedItem.name;
       console.log('itemName', itemName);
-
+      console.log('currentQuantity is ..', updatedItem.currentQuantity)
+      if(updatedItem.alertQuantity==='' || updatedItem.alertQuantity===null || updatedItem.alertQuantity === undefined) {
+        updatedItem.alertQuantity=0
+      }
       this.get('store').findRecord('item', item.id).then(function(item) {
-          if (updatedItem.name.trim().length && updatedItem.currentQuantity !== undefined || updatedItem.currentQuantity !== null) {
-            item.set('name', updatedItem.name);
-            item.set('description', updatedItem.description);
-            item.set('currentQuantity', updatedItem.currentQuantity);
-            item.set('alertQuantity', updatedItem.alertQuantity);
-            item.save()
-              .then(() => {
-                Ember.$(".modal-backdrop").remove()
-                Ember.$(`#edit-item-form-${item.id}`).modal('hide');
-              })
-              .catch(() => {
-                item.rollbackAttributes()
-                Ember.$('.message').show()
-                Ember.$('.message').html('Error on edit item')
-                Ember.$('.message').delay(1300).fadeOut('slow')
-              })
-            } else {
+        if (updatedItem.name.trim().length && updatedItem.currentQuantity !== undefined && updatedItem.currentQuantity !== null && updatedItem.currentQuantity !== '') {
+          item.set('name', updatedItem.name);
+          item.set('description', updatedItem.description);
+          item.set('currentQuantity', updatedItem.currentQuantity);
+          item.set('alertQuantity', updatedItem.alertQuantity);
+          item.save()
+            .then(() => {
+              Ember.$(".modal-backdrop").remove()
+              Ember.$(`#edit-item-form-${item.id}`).modal('hide');
+            })
+            .catch(() => {
+              item.rollbackAttributes()
               Ember.$('.message').show()
-              Ember.$('.message').html('Name and current quantity required')
-              Ember.$('.message').delay(1300).fadeOut('slow')
-          }
+              Ember.$('.message').html('Error on edit item')
+              Ember.$('.message').delay(1400).fadeOut('slow')
+            })
+        } else {
+          Ember.$('.message').show()
+          Ember.$('.message').html('Name and current quantity required')
+          Ember.$('.message').delay(1400).fadeOut('slow')
+        }
       });
-  },
+    },
     deleteItem(item) {
       console.log('got there')
       item.destroyRecord()
