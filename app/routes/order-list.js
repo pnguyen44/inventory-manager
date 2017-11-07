@@ -11,7 +11,7 @@ export default Ember.Route.extend({
         this.get('store').find('item', item.id)
           .then(function(item) {
             // item.set('inOrderList', true)
-            item.set('quantityPurchased', quantityPurchased)
+            item.set('quantityPurchased', Number(quantityPurchased))
             item.save()
               .then(() => {
                 console.log('reqeuest quan edied sucess')
@@ -20,8 +20,8 @@ export default Ember.Route.extend({
               })
               .catch(() => {
                 Ember.$('.message').show()
-                Ember.$('.message').html('Error on edit reqeuested quantity')
-                Ember.$('.message').delay(1300).fadeOut('slow')
+                Ember.$('.message').html('Error on edit requested quantity')
+                Ember.$('.message').delay(1500).fadeOut('slow')
               })
           });
       }
@@ -42,7 +42,7 @@ export default Ember.Route.extend({
             .catch(() => {
               Ember.$('.message').show()
               Ember.$('.message').html('Error on remove item from order list')
-              Ember.$('.message').delay(1300).fadeOut('slow')
+              Ember.$('.message').delay(1500).fadeOut('slow')
             })
         });
     },
@@ -50,9 +50,9 @@ export default Ember.Route.extend({
       this.get('store').find('item', item.id)
         .then(function(item) {
           // item.set('inOrderList', true)
-          item.set('quantityPurchased', updatedItem.quantityPurchased)
-          item.set('inOrderList',updatedItem.inOrderList)
-          item.set('currentQuantity',updatedItem.currentQuantity)
+          item.set('quantityPurchased', Number(updatedItem.quantityPurchased))
+          item.set('inOrderList', Number(updatedItem.inOrderList))
+          item.set('currentQuantity', Number(updatedItem.currentQuantity))
           item.save()
             .then(() => {
               console.log('success')
@@ -63,7 +63,7 @@ export default Ember.Route.extend({
             .catch(() => {
               Ember.$('.message').show()
               Ember.$('.message').html('Error on send to inventory')
-              Ember.$('.message').delay(1300).fadeOut('slow')
+              Ember.$('.message').delay(1500).fadeOut('slow')
             })
         });
     },

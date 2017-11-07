@@ -12,7 +12,7 @@ export default Ember.Route.extend({
         this.get('store').find('item', item.id)
           .then(function(item) {
             item.set('inOrderList', true)
-            item.set('quantityPurchased', quantityPurchased)
+            item.set('quantityPurchased', Number(quantityPurchased))
             item.save()
               .then(() => {
                 console.log('item has been saved in cart')
@@ -24,7 +24,7 @@ export default Ember.Route.extend({
               .catch(() => {
                 Ember.$('.message').show()
                 Ember.$('.message').html('Error on add to order list')
-                Ember.$('.message').delay(1000).fadeOut('slow')
+                Ember.$('.message').delay(1500).fadeOut('slow')
               })
             // console.log('item.inOrderList ===', this.get('item'))
           });
