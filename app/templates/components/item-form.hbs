@@ -1,30 +1,5 @@
-{{!-- <h1>Add Item</h1>
-<form {{action "createItem" on="submit"}}>
-  <label>Item Name</label>
-  {{input
-    placeholder='Name: Required'
-    value=newItem.name}}
-  <label>Description</label>
-  {{input
-      placeholder='Description'
-      value=newItem.description}}
-  <label>Current Quantity</label>
-  {{input
-      type='number'
-      min=1
-      placeholder='Current quantity, must be a number'
-      value=newItem.currentQuantity}}
-  <label>Alert Quantity</label>
-  {{input
-      type='number'
-      min=1
-      placeholder='Alert quantity, must be a number'
-      value=newItem.alertQuantity}}
-  <button type='submit'>Save</button>
-</form> --}}
-
 <!-- Button trigger modal -->
- <button type="button"{{action 'clearItemForm'}} class="btn btn-primary btn-xs" data-toggle="modal" data-target="#item-form-{{category.id}}">
+ <button type="button"{{action 'clearItemForm'}} class="btn btn-success btn-xs" data-toggle="modal" data-target="#item-form-{{category.id}}">
   Add Item
  </button>
 
