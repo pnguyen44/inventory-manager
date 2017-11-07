@@ -1,8 +1,6 @@
 @import 'bootstrap';
 @import 'bootstrap/theme';
-// a{
-//   color: white;
-// }
+
 .category-wrapper {
   // width: 50%;
   background-color: lightgrey;
@@ -32,13 +30,6 @@ div.image {
   content:url("https://i.imgur.com/lpbyBg3.jpg");
   height: 50%;
 }
-
-// .item-table-hidden :not(:first-child){
-//   display: none;
-// }
-// .item-table-hidden2 :not(:last-child){
-//   display: none;
-// }
 .message {
   color: red;
 }
@@ -69,8 +60,7 @@ div.image {
 //   margin-bottom: -3px;
 }
 .table-item {
-  margin-top: -23px;
-  // background-color: lightyellow;
+    margin-top: -21px;
 }
 .table-item td, .table-item th, .item-table-header{
   border: 1px solid;
@@ -90,7 +80,6 @@ div.image {
 }
 .th-name {
   width: 25%;
-  // font-size: 20px;
 }
 .th-category-name {
   font-size: 20px;

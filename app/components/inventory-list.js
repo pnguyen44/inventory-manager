@@ -22,17 +22,13 @@ export default Ember.Component.extend({
       return this.sendAction('editItem',item, updatedItem);
     },
     deleteItem(item) {
-      console.log('got ther')
       return this.sendAction('deleteItem',item);
     },
     toggleItemTable(category) {
-      console.log('togling table in category-name')
-      // console.log('category.id', category.id)
       console.log('isShowingTable',this.get('isShowingTable'))
       let target = Ember.$(this)
       console.log('target',target)
       Ember.$(this).css('color','yellow')
-      // if(parseInt(category.id)===31) {
         if (this.get('buttonName')==='View Item(s)') {
           this.set('buttonName', 'Hide Item(s)')
           console.log('ishowtable lll',this.get('isShowingTable'))
@@ -40,7 +36,6 @@ export default Ember.Component.extend({
         } else {
           this.set('isShowingTable', false)
           this.set('buttonName', 'View Item(s)')
-          // this.toggleProperty('itemTableHidden')
         };
     },
   }

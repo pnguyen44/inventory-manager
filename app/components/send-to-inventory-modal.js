@@ -44,9 +44,6 @@ export default Ember.Component.extend({
             this.get("updatedItem").inOrderList=true
           }
           this.get('updatedItem').currentQuantity= currentQty + purchasedAmount
-
-          // console.log('inOrderList is -', this.get('updatedItem').inOrderList)
-          console.log('updatedItem--', this.get('updatedItem'))
           return this.sendAction('sendToInventory', item, this.get('updatedItem'))
         }
       }

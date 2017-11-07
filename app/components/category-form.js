@@ -21,7 +21,6 @@ export default Ember.Component.extend({
         Ember.$('.message').show()
         Ember.$('.message').delay(1000).fadeOut('slow')
       }
-      // console.log('form submitted')
       this.sendAction('createCategory', this.get('newCategoryToAdd'));
       this.set('newCategoryToAdd.name', null);
     }

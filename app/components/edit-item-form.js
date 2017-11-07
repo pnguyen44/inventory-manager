@@ -15,13 +15,7 @@ export default Ember.Component.extend({
       let updatedAlertQuantity= this.get('updatedAlertQuantity')
       let updatedCurrentQuantity = this.get('updatedCurrentQuantity')
       console.log('updatedAlertQuantity--', updatedAlertQuantity)
-      // if (updatedAlertQuantity===null || updatedAlertQuantity===undefined || updatedAlertQuantity==='') {
-      //   this.set('updatedAlertQuantity',0)
-      // }
       console.log('currentQuantity--', this.get('currentQuantity'))
-      // if (currentQuantity===null || currentQuantity===undefined || currentQuantity==='') {
-      //   this.set('updatedAlertQuantity',0)
-      // }
       console.log(newName.trim().length)
 
       if (newName !== undefined || newName === null || newName === '') {
@@ -41,7 +35,6 @@ export default Ember.Component.extend({
       this.get('updatedItem').currentQuantity = this.get('updatedCurrentQuantity');
       this.get('updatedItem').alertQuantity = this.get('updatedAlertQuantity');
       console.log('updatedItem=..', this.get('updatedItem'));
-      // this.get("item").save()
       this.sendAction('editItem',this.get('item'), this.get('updatedItem'));
       this.set('updatedItem', {})
     },
@@ -51,10 +44,6 @@ export default Ember.Component.extend({
       this.set('updatedDescription', this.get('item.description'))
       this.set('updatedCurrentQuantity', this.get('item.currentQuantity'))
       this.set('updatedAlertQuantity', this.get('item.alertQuantity'))
-      // updatedName: Ember.computed.oneWay('item.name'),
-      // updatedDescription: Ember.computed.oneWay('item.description'),
-      // updatedCurrentQuantity: Ember.computed.oneWay('item.currentQuantity'),
-      // updatedAlertQuantity: Ember.computed.oneWay('item.alertQuantity')
     },
   }
 });

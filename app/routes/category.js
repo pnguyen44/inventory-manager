@@ -6,6 +6,25 @@ export default Ember.Route.extend({
   },
   flashMessages: Ember.inject.service(),
   actions: {
+    editCategory(category, updatedName) {
+      console.log('updatedName.length=', updatedName.length)
+      this.get('store').find('category', category.id).then(function(category) {
+        if (updatedName.trim().length) {
+          category.set('name', updatedName)
+          category.save()
+          .then(() => {
+            Ember.$(".modal-backdrop").remove()
+            Ember.$(`#edit-category-form-${category.id}`).modal('hide');
+          })
+          .catch(() => {
+            category.rollbackAttributes()
+            Ember.$('.message').show()
+            Ember.$('.message').html('Error on edit category')
+            Ember.$('.message').delay(1300).fadeOut('slow')
+          })
+        }
+      })
+    },
     deleteCategory(category) {
       console.log('deleting')
       category.destroyRecord()
@@ -41,7 +60,6 @@ export default Ember.Route.extend({
           Ember.$('.message').html('Name and current quantity required')
           Ember.$('.message').delay(1500).fadeOut('slow')
         }
-      // }
     },
     editItem(item, updatedItem) {
       console.log('get to category edit item');
@@ -83,6 +101,6 @@ export default Ember.Route.extend({
           Ember.$(".modal-backdrop").remove()
           Ember.$(`#deleteItemConfirm${item.id}`).modal('hide');
         })
-    }
+    },
   }
 });

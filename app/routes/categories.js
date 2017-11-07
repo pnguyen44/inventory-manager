@@ -80,7 +80,6 @@ export default Ember.Route.extend({
           Ember.$('.message').html('Name and current quantity required')
           Ember.$('.message').delay(1500).fadeOut('slow')
         }
-      // }
     },
     editItem(item, updatedItem) {
       console.log('get to category edit item');

@@ -24,8 +24,6 @@ export default Ember.Component.extend({
       if (newItemName !== undefined || newItemName === null || newItemName === '') {
         if(newItemName.trim().length ===0) {
 
-      // if (newItemName!==undefined && newItemName !== null) {
-      //   if (newItemName.trim().length && newCurrentQty!==0 || newCurrentQty!==undefined ) {
       Ember.$('.message').show()
       this.set('message', 'Name and current quantity required')
       Ember.$('.message').delay(1300).fadeOut('slow')
@@ -39,7 +37,6 @@ export default Ember.Component.extend({
         this.set('message', 'Name required')
         Ember.$('.message').delay(1300).fadeOut('slow')
       }
-      // this.sendAction('createItem', this.get('newItem'));
       this.set('newItem', {});
       console.log('newItem after reset', this.get('newItem'))
     },
