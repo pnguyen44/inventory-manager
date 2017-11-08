@@ -3,9 +3,17 @@ The Inventory Manager app was created using HTML, Ruby on Rails, CSS/SASS, Ember
 
 <img width="1440" alt="inventory app" src="https://user-images.githubusercontent.com/26861466/32486500-cfa47522-c374-11e7-8e72-6e8efff3f658.png">
 
-## Link to Backend Repo: https://github.com/pnguyen44/inventory-manager-api
+## Frontend Repo And Deployed Site Links:
+Link to Frontend Repo: https://github.com/pnguyen44/inventory-manager
 
-## Link to Backend Deployed Site: https://the-inventory-manager.herokuapp.com/
+Link to Frontend Deployed Site: https://pnguyen44.github.io/inventory-manager/
+
+## Backend Repo and Depoyed Site Links:
+Link to Backend: https://github.com/pnguyen44/inventory-manager-api
+
+Link to Backend Deployed Site: https://the-inventory-manager.herokuapp.com/
+
+
 
 ## User Stories
 - Users can sign up, sign in, change password, and sign out by clicking on the “Sign up”, ‘Sign in”, “Change Password”, and “Sign out” navigation bar link, respectively.
