@@ -58,13 +58,14 @@ The first thing I did was create a user story and wireframe to map out my invent
 ## Technologies Used
 - Ruby on Rails
 - Javascript
-- Ajax
 - Ember
 - Handlebars
 - Bootstrap
 - HTML
 - CSS/ SASS
-
+- PostgreSQL
+- Heroku
+- Git/Github
 
 ## Resources Used
 - MDN
