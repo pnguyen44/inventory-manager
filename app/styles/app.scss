@@ -1,5 +1,7 @@
 @import 'bootstrap';
 @import 'bootstrap/theme';
+// @import "masthead.scss";
+@import 'index';
 
 .category-wrapper {
   background-color: lightgrey;
@@ -10,6 +12,7 @@
 .content {
   margin-top: 60px;
 }
+
 // .container-box {
 //   width: 75%;
 // }
