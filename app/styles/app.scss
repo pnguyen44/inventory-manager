@@ -4,6 +4,12 @@
 @import 'index';
 $mainColor: #92d3e5;
 
+a {
+  color: darkblue;
+  // text-decoration-style: solid;
+ }
+  a:hover {
+    color: blue; }
 
 .category-wrapper {
   background-color: lightgrey;
