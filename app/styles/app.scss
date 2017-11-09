@@ -2,7 +2,9 @@
 @import 'bootstrap/theme';
 // @import "masthead.scss";
 @import 'index';
-
+.fa {
+  color: white;
+}
 .category-wrapper {
   background-color: lightgrey;
   height: 37px;
