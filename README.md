@@ -9,7 +9,7 @@ Link to Frontend Repo: https://github.com/pnguyen44/inventory-manager
 Link to Frontend Deployed Site: https://pnguyen44.github.io/inventory-manager/
 
 ## Backend Repo and Depoyed Site Links:
-Link to Backend: https://github.com/pnguyen44/inventory-manager-api
+Link to Backend Rep: https://github.com/pnguyen44/inventory-manager-api
 
 Link to Backend Deployed Site: https://the-inventory-manager.herokuapp.com/
 
