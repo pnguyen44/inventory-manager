@@ -10,11 +10,38 @@ body {
 p {
   line-height: 1.75; }
 
+.jumbotron {
+  margin-top:100px;
+  background-color: lightblue;
+  // height: 300px;
+}
+// .get-started {
+//   height: 80px;
+// }
+
+// .shopping-cart-logo {
+//   height: 80px;
+//   width: 30%;
+// }
+img {
+  height: 80px;
+  width: 30%;
+}
+// div.inventory-list-pic {
+//   height: 90%;
+// }
+// img {
+//   width: 40%;
+// }
+#services {
+  // margin-top: -70px;
+  // background-color: lightblue;
+}
+
 // a {
 //   color: #fed136; }
 //   a:hover {
 //     color: #fec503; }
-
 .text-primary {
   color: #fed136 !important; }
 
@@ -28,16 +55,18 @@ p {
 //   font-family: 'Montserrat', 'Helvetica Neue', Helvetica, Arial, sans-serif; }
 
 section {
-  padding: 100px 0; }
+  padding: 0;
+  height: 450px;
+  }
   section h2.section-heading {
     font-size: 40px;
-    margin-top: 0;
-    margin-bottom: 15px; }
+    margin-top: -90px;
+    margin-bottom: 70px; }
   section h3.section-subheading {
     font-size: 16px;
     font-weight: 400;
     font-style: italic;
-    margin-bottom: 75px;
+    margin-bottom: 90px;
     text-transform: none;
     font-family: 'Droid Serif', 'Helvetica Neue', Helvetica, Arial, sans-serif; }
 
