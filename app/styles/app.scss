@@ -2,9 +2,9 @@
 @import 'bootstrap/theme';
 // @import "masthead.scss";
 @import 'index';
-.fa {
-  color: white;
-}
+$mainColor: #92d3e5;
+
+
 .category-wrapper {
   background-color: lightgrey;
   height: 37px;
@@ -22,7 +22,29 @@ footer {
 //   width: 75%;
 // }
 .form-box {
-  border-style: solid;
+  padding: 0 18px 33px;
+  margin-top: 100px;
+  border: 1px solid;
+  // padding: 0 -100px;
+  // width: 50%;
+  background-color: $mainColor;
+}
+.form-box input {
+  background-color: lightblue;
+}
+form {
+  padding: 0 18px 33px;
+  // background-color: lightblue;
+}
+.form-btn {
+  float: right;
+}
+.fa {
+  color: white;
+}
+.form-box .btn {
+  margin-left: 10px;
+  // float: right;
 }
 h1, h4 {
   text-align: center;
