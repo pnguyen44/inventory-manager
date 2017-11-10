@@ -259,8 +259,10 @@
   width: 100%;
   height: 160px;
 }
-.card-text {
-  // border-top: 1px solid;
+.intro-heading {
+  border: 9px solid black;
+  // height: 150px;
+
 }
 //
 .services {
@@ -292,7 +294,7 @@ p {
 // }
 img {
   height: 80px;
-  width: 30%;
+  width: 10%;
 }
 // div.inventory-list-pic {
 //   height: 90%;
@@ -402,12 +404,15 @@ header.masthead {
   background-size: cover; }
   header.masthead .intro-text {
     padding-top: 150px;
-    padding-bottom: 100px; }
+    padding-bottom: 100px;
+    // border: 9px solid black;
+  }
     header.masthead .intro-text .intro-lead-in {
       font-size: 22px;
       font-style: italic;
       line-height: 22px;
       margin-bottom: 25px;
+
       font-family: 'Droid Serif', 'Helvetica Neue', Helvetica, Arial, sans-serif; }
     header.masthead .intro-text .intro-heading {
       font-size: 50px;
@@ -527,7 +532,7 @@ ul.social-buttons {
       // Small devices (landscape phones, 576px and up)
       @media (min-width: 576px) and (max-width: 767px) {
         .card img {
-          width: 50%;
+          width: 40%;
         }
 
       }
