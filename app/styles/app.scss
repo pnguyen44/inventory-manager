@@ -33,13 +33,17 @@ footer {
 .form-box {
   padding: 0 18px 33px;
   margin-top: 70px;
+  // margin-left: 40px;
+  // margin-right: 40px;
   border: 1px solid;
-  // padding: 0 -100px;
+  // padding: 0 100px;
   // width: 50%;
-  background-color: $mainColor;
+  // background-color: $mainColor;
+  background-color: #323232;
+  color: white;
 }
 .form-box input {
-  background-color: lightblue;
+  // background-color: lightblue;
 }
 .form-box a {
   color: red;
