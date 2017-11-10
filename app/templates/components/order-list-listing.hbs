@@ -10,10 +10,10 @@
         </th>
         <th class='th-des tb-header'></th>
         <th class='th-quant tb-header'></th>
+        <th class='th-quant tb-header'></th>
         <th class='th-btn tb-header'></th>
-        <th class='th-btn tb-header'></th>
-        <th class='th-btn tb-header'></th>
-        <th class='th-btn tb-header'></th>
+        <th class='th-requested tb-header'></th>
+        <th class='th-btn-inventory tb-header'></th>
         {{!-- <th class='th-quant'><button type='button' {{action 'toggleItemTable' category}}>{{buttonName}}</button></th> --}}
         {{#unless hide}}
           {{#if category.items.length}}
@@ -38,9 +38,9 @@
           <th class='th-quant tb-field'>Current Quantity</th>
           <th class='th-quant tb-field'>Alert Quantity</th>
           <th class='th-btn tb-field'>Requested Quantity</th>
-          <th class='th-btn tb-field'></th>
-          <th class='th-btn tb-field'></th>
-          <th class='th-btn tb-field'></th>
+          <th class='th-requested tb-field'></th>
+          <th class='th-btn-inventory tb-field'></th>
+          <th class='th-view-btn tb-field'></th>
           {{!-- <th class='th-btn'></th> --}}
         </tr>
       {{!-- </thead>
@@ -59,7 +59,7 @@
               {{else}} --}}
                 <th class='th-requested'><{{edit-requested-quantity-form item=item category=category editRequestedQty='editRequestedQty'}}</th>
                 <th class='th-btn-inventory'><{{send-to-inventory-modal item=item category= category removeFromOrderList='removeFromOrderList' sendToInventory='sendToInventory'}}</th>
-                <th class='th-cart-info'><{{remove-from-order-list item=item category= category removeFromOrderList='removeFromOrderList'}}</th>
+                <th class='th-view-btn'><{{remove-from-order-list item=item category= category removeFromOrderList='removeFromOrderList'}}</th>
               {{!-- {{/if}} --}}
             </tr>
           {{/if}}
