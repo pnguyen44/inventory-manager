@@ -5,44 +5,46 @@
   <table class="table table-category">
     <thead class='thead-inverse'>
       <tr>
-        <th class='th-name th-category-name'>
+        <th class='th-name th-category-name tb-header'>
           {{category.name}} ({{category.orderedItemsCount}})
         </th>
-        <th class='th-des'></th>
-        <th class='th-quant'></th>
-        <th class='th-btn'></th>
-        <th class='th-btn'></th>
+        <th class='th-des tb-header'></th>
+        <th class='th-quant tb-header'></th>
+        <th class='th-btn tb-header'></th>
+        <th class='th-btn tb-header'></th>
+        <th class='th-btn tb-header'></th>
+        <th class='th-btn tb-header'></th>
         {{!-- <th class='th-quant'><button type='button' {{action 'toggleItemTable' category}}>{{buttonName}}</button></th> --}}
         {{#unless hide}}
           {{#if category.items.length}}
-            <th class='th-view-btn'><button class='btn btn-primary btn-xs' type='button' {{action 'toggleItemTable' category}}>{{buttonName}}</button></th>
+            <th class='th-view-btn tb-header'><button class='btn btn-primary btn-xs' type='button' {{action 'toggleItemTable' category}}>{{buttonName}}</button></th>
           {{else}}
-            <th class='th-view-btn'></th>
+            <th class='th-view-btn tb-header'></th>
           {{/if}}
         {{/unless}}
 
       </tr>
     </thead>
     <tbody>
-    </tbody>
-  </table>
+    {{!-- </tbody>
+  </table> --}}
 
   {{#if isShowingTable}}
-    <table class="table table-striped table-item">
-      <thead class='thead-inverse item-table-header'>
+    {{!-- <table class="table table-striped table-item">
+      <thead class='thead-inverse item-table-header'> --}}
         <tr>
-          <th class='th-name'>Name</th>
-          <th class='th-des'>Description</th>
-          <th class='th-quant'>Current Quantity</th>
-          <th class='th-quant'>Alert Quantity</th>
-          <th class='th-btn'>Requested Quantity</th>
-          <th class='th-btn'></th>
-          <th class='th-btn'></th>
-          <th class='th-btn'></th>
+          <th class='th-name tb-field'>Name</th>
+          <th class='th-des tb-field'>Description</th>
+          <th class='th-quant tb-field'>Current Quantity</th>
+          <th class='th-quant tb-field'>Alert Quantity</th>
+          <th class='th-btn tb-field'>Requested Quantity</th>
+          <th class='th-btn tb-field'></th>
+          <th class='th-btn tb-field'></th>
+          <th class='th-btn tb-field'></th>
           {{!-- <th class='th-btn'></th> --}}
         </tr>
-      </thead>
-      <tbody>
+      {{!-- </thead>
+      <tbody> --}}
         {{#each category.items as |item|}}
           {{#if item.inOrderList}}
             <tr>
@@ -62,9 +64,11 @@
             </tr>
           {{/if}}
         {{/each}}
-      </tbody>
-    </table>
+      {{!-- </tbody>
+    </table> --}}
   {{/if}}
+  </tbody>
+</table>
 {{/if}}
 {{!-- <button type='button' {{action 'toggleItemTable'}}>View Item</button> --}}
 {{!-- <br> --}}

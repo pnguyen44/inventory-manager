@@ -3,8 +3,8 @@
 {{!-- {{item-list/item category=category}} --}}
 {{!-- <button type='button' {{action 'toggleItemTable'}}>{{buttonName}}</button> --}}
 
-<table class="table table-striped table-item">
- <thead class='thead-inverse item-table-header'>
+{{!-- <table class="table table-striped table-item">
+ <thead class='thead-inverse item-table-header'> --}}
     <tr>
       <th class='th-name'>Name</th>
       <th class='th-des'>Description</th>
@@ -13,19 +13,19 @@
       <th class='th-btn'></th>
       <th class='th-btn'></th>
     </tr>
-  </thead>
-  <tbody>
+  {{!-- </thead>
+  <tbody> --}}
         {{#each category.items as |item|}}
     <tr>
-        <th>{{item.name}}</th>
-        <th>{{item.description}}</th>
-        <th>{{item.currentQuantity}}</th>
-        <th>{{item.alertQuantity}}</th>
-        <th>{{edit-item-form item=item category=category editItem='editItem'}}</th>
-        <th>{{delete-item-button-confirm item=item deleteItem='deleteItem'}}</th>
+        <th class='th-name'>{{item.name}}</th>
+        <th class='th-des'>{{item.description}}</th>
+        <th class='th-quant'>{{item.currentQuantity}}</th>
+        <th class='th-btn'>{{item.alertQuantity}}</th>
+        <th class='th-btn'>{{edit-item-form item=item category=category editItem='editItem'}}</th>
+        <th class='th-btn'>{{delete-item-button-confirm item=item deleteItem='deleteItem'}}</th>
     </tr>
 
     {{/each}}
-  </tbody>
-</table>
+  {{!-- </tbody>
+</table> --}}
 {{!-- {{#link-to 'categories'}}Back To Category{{/link-to}} --}}

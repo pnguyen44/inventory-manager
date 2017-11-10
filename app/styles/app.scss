@@ -112,17 +112,24 @@ div.image {
   border: 3px;
 }
 
+.tb-header {
+  background-color: $mainColor;
+}
 .table-category {
   // background-color: lightblue;
-    background-color: #92d3e5;
+    // background-color: #92d3e5;
 //   margin-bottom: -3px;
 }
 .table-item {
     margin-top: -21px;
 }
-.table-item td, .table-item th, .item-table-header{
+.tb-field {
+  background-color: #edf1f7;
+}
+td, th,{
   border: 1px solid;
-  border-color: lightblue;
+  // background-color: lightgrey;
+  border-color: $mainColor;
 }
 
 .th {
@@ -153,5 +160,5 @@ div.image {
 }
 
 .th-view-btn{
-  width: 7%;
+  width: 10%;
 }

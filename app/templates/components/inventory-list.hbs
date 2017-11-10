@@ -6,31 +6,51 @@
  <thead class='thead-inverse'>
     <tr>
       {{#if removeLink}}
-        <th class='th-name th-category-name'>{{category.name}} ({{category.items.length}}) </th>
+        <th class='th-name th-category-name tb-header'>{{category.name}} ({{category.items.length}}) </th>
         {{else}}
-        <th class='th-name th-category-name'>{{#link-to 'category' category}}{{category.name}} ({{category.items.length}}) {{/link-to}}</th>
+        <th class='th-name th-category-name tb-header'>{{#link-to 'category' category}}{{category.name}} ({{category.items.length}}) {{/link-to}}</th>
       {{/if}}
-      <th class='th-des'></th>
+      <th class='th-des tb-header'></th>
       {{!-- <th class='th-quant'><button type='button' {{action 'toggleItemTable' category}}>{{buttonName}}</button></th> --}}
       {{#unless hide}}
         {{#if category.items.length}}
-        <th class='th-view-btn'><button class='btn btn-primary btn-xs' type='button' {{action 'toggleItemTable' category}}>{{buttonName}}</button></th>
+        <th class='th-view-btn tb-header'><button class='btn btn-primary btn-xs' type='button' {{action 'toggleItemTable' category}}>{{buttonName}}</button></th>
           {{else}}
-          <th class='th-view-btn'></th>
+          <th class='th-view-btn tb-header'></th>
         {{/if}}
       {{/unless}}
-      <th class='th-btn'>{{item-form category=category createItem="createItem" }} </th>
-      <th class='th-btn'>{{edit-category-form category=category editCategory='editCategory'}}</th>
-      <th class='th-btn'>{{delete-category-button-confirm category=category deleteCategory='deleteCategory'}}</th>
+      <th class='th-btn tb-header'>{{item-form category=category createItem="createItem" }} </th>
+      <th class='th-btn tb-header'>{{edit-category-form category=category editCategory='editCategory'}}</th>
+      <th class='th-btn tb-header'>{{delete-category-button-confirm category=category deleteCategory='deleteCategory'}}</th>
     </tr>
-  </thead>
-  <tbody>
-  </tbody>
-</table>
-
+</thead>
+<tbody>
 {{#if isShowingTable}}
-{{item-list category=category createItem='createItem' editItem='editItem' deleteItem='deleteItem'}}
+<tr>
+  <th class='th-name tb-field'>Name</th>
+  <th class='th-des tb-field'>Description</th>
+  <th class='th-quant tb-field'>Current Quantity</th>
+  <th class='th-quant tb-field'>Alert Quantity</th>
+  <th class='th-btn tb-field'></th>
+  <th class='th-btn tb-field'></th>
+</tr>
+{{!-- </thead>
+<tbody> --}}
+    {{#each category.items as |item|}}
+<tr>
+    <th class='th-name'>{{item.name}}</th>
+    <th class='th-des'>{{item.description}}</th>
+    <th class='th-quant'>{{item.currentQuantity}}</th>
+    <th class='th-btn'>{{item.alertQuantity}}</th>
+    <th class='th-btn'>{{edit-item-form item=item category=category editItem='editItem'}}</th>
+    <th class='th-btn'>{{delete-item-button-confirm item=item deleteItem='deleteItem'}}</th>
+</tr>
+
+{{/each}}
 {{/if}}
 {{!-- <button type='button' {{action 'toggleItemTable'}}>View Item</button> --}}
 {{!-- <br> --}}
+
+</tbody>
+</table>
 </div>
