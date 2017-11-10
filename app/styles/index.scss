@@ -235,19 +235,23 @@
  //     width: 100%;
  //   }
  // }
-
-
+// .header-btn{
+// margin: 0 auto;
+// }
+.service-title {
+  margin-bottom: 40px;
+}
 
  .card {
-   height: 100%;
-   width: 70%;
+  //  height: 100%;
+  //  width: 70%;
   //  border: 1px solid;
-   margin: 0 50px 10px;
+   margin: 0 10px 10px;
  }
  .card-img-top {
   //  border-bottom: 1px solid;
   // height: 160px;
-  width: 100%;
+  // width: 100%;
   background-color: lightgrey;
   // radius: 100%;
  }
@@ -511,3 +515,32 @@ ul.social-buttons {
   }
     ul.social-buttons li a:active, ul.social-buttons li a:focus, ul.social-buttons li a:hover {
       background-color: #fed136; }
+
+      // Extra small devices (portrait phones, less than 576px)
+      @media (max-width: 575px) {
+        .card img {
+          width: 40%;
+        }
+
+      }
+
+      // Small devices (landscape phones, 576px and up)
+      @media (min-width: 576px) and (max-width: 767px) {
+        .card img {
+          width: 50%;
+        }
+
+      }
+
+      // Medium devices (tablets, 768px and up)
+      @media (min-width: 768px) and (max-width: 991px) {
+        // .card img {
+        //   width: 30%;
+        // }
+       }
+
+      // Large devices (desktops, 992px and up)
+      @media (min-width: 992px) and (max-width: 1199px) {  }
+
+      // Extra large devices (large desktops, 1200px and up)
+      @media (min-width: 1200px) {  }
