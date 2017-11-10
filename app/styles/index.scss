@@ -212,6 +212,12 @@ footer {
   // border-color: black;
   padding: 25px 0;
   text-align: center; }
+  footer a {
+    color: lightblue;
+  }
+  footer a:hover {
+    color: lightgrey;
+  }
   footer span.copyright {
     font-size: 90%;
     line-height: 40px;
