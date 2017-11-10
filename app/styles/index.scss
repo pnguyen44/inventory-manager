@@ -246,22 +246,27 @@
   //  height: 100%;
   //  width: 70%;
   //  border: 1px solid;
-   margin: 0 10px 10px;
+   margin: 0 10px 40px;
  }
  .card-img-top {
   //  border-bottom: 1px solid;
   // height: 160px;
   // width: 100%;
-  background-color: lightgrey;
+  // background-color: lightgrey;
   // radius: 100%;
  }
 .card img {
-  width: 100%;
-  height: 160px;
+  width: 70%;
+  height: 130px;
 }
 .intro-heading {
   border: 9px solid black;
+  margin-top: -70px;
+  padding-top: 30px;
+  padding-bottom: 30px;
   // height: 150px;
+}
+.masthead {
 
 }
 //
@@ -415,7 +420,7 @@ header.masthead {
 
       font-family: 'Droid Serif', 'Helvetica Neue', Helvetica, Arial, sans-serif; }
     header.masthead .intro-text .intro-heading {
-      font-size: 50px;
+      font-size: 44px;
       font-weight: 700;
       line-height: 50px;
       margin-bottom: 25px;
@@ -526,13 +531,15 @@ ul.social-buttons {
         .card img {
           width: 40%;
         }
-
+        header .masthead .intro-heading {
+          font-size: 20px;
+        }
       }
 
       // Small devices (landscape phones, 576px and up)
       @media (min-width: 576px) and (max-width: 767px) {
         .card img {
-          width: 40%;
+          width: 30%;
         }
 
       }
