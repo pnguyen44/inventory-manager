@@ -4,6 +4,7 @@
 @import 'index';
 // @import 'font-awesome.min.css'
 $mainColor: #92d3e5;
+$navBarColor: #101010;
 
 a {
   color: blue;
@@ -36,12 +37,12 @@ footer {
   margin-top: 70px;
   // margin-left: 40px;
   // margin-right: 40px;
-  border: 1px solid;
+  border: 1px solid $navBarColor;
   // padding: 0 100px;
   // width: 50%;
   // background-color: $mainColor;
-  background-color: #323232;
-  color: white;
+  // background-color: #323232;
+  color: black;
 }
 .form-box input {
   // background-color: lightblue;
@@ -88,8 +89,8 @@ div.image {
 }
 
 .modal-content {
-  color: white;
-  background-color:  #323232;
+  color: black;
+  // background-color:  #323232;
 }
 .modal-title {
   font-size: 18px;
