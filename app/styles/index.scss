@@ -309,9 +309,9 @@ p {
   background-color: lightblue;
   // height: 300px;
 }
-.learn-more {
-  color: black;
-}
+// .learn-more {
+//   color: black;
+// }
 .card {
   // width: 40%;
 }
@@ -468,8 +468,13 @@ body {
       line-height: 75px;
       margin-bottom: 50px;
       font-family: 'Montserrat', 'Helvetica Neue', Helvetica, Arial, sans-serif; } }
-      header.masthead .learn-more a:hover {
+
+      header.masthead .learn-more a {
         color: black;
+      }
+
+      header.masthead .learn-more a:hover {
+        color: blue;
       }
 
 .service-heading {
