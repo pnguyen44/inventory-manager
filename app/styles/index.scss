@@ -264,7 +264,7 @@ section .service-title {
   //  height: 100%;
   //  width: 70%;
   //  border: 1px solid;
-   margin: 0 10px 40px;
+    margin: 0 19px 40px;
  }
  .card-img-top {
   //  border-bottom: 1px solid;
@@ -535,7 +535,7 @@ footer {
     color: lightgrey;
   }
   footer span.copyright {
-    font-size: 90%;
+    font-size: 125%;
     line-height: 40px;
     text-transform: none;
     font-family: 'Montserrat', 'Helvetica Neue', Helvetica, Arial, sans-serif; }
@@ -570,15 +570,33 @@ ul.social-buttons {
         .card img {
           width: 40%;
         }
-        header .masthead .intro-heading {
-          font-size: 20px;
+        header.masthead .intro-text .intro-heading {
+          font-size: 30px;
+          line-height: 35px;
+          margin-top: -37px;
+          padding-top: 16px;
+          padding-bottom: 16px
         }
       }
 
       // Small devices (landscape phones, 576px and up)
       @media (min-width: 576px) and (max-width: 767px) {
         .card img {
-          width: 25%;
+          width: 41%;
+        }
+        header.masthead .intro-text .intro-heading {
+          font-size: 30px;
+          line-height: 35px;
+          margin-top: -37px;
+          // padding: 0 50px;
+          // padding-top: 16px;
+          // padding-bottom: 16px
+        }
+        .card {
+          margin: 0 117px 58px;
+        }
+        .card-text {
+          margin: 0 31px 18px;
         }
 
       }
@@ -586,12 +604,23 @@ ul.social-buttons {
       // Medium devices (tablets, 768px and up)
       @media (min-width: 768px) and (max-width: 991px) {
         .card img {
-          width: 50%;
+          width: 100%;
+        }
+        header .masthead {
+          margin-top: 100px;
+        }
+        .card {
+              margin: 0 78px 40px;
         }
        }
 
       // Large devices (desktops, 992px and up)
-      @media (min-width: 992px) and (max-width: 1199px) {  }
+      @media (min-width: 992px) and (max-width: 1199px) {
+        .card {
+              // margin: 0 78px 40px;
+        }
+
+       }
 
       // Extra large devices (large desktops, 1200px and up)
       @media (min-width: 1200px) {  }
