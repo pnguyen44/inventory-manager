@@ -166,3 +166,34 @@ td, th,{
 // .th-view-hidden-btn  {
 //   width: 30%;
 // }
+
+// Extra small devices (portrait phones, less than 576px)
+@media (max-width: 575px) {
+  // .table {
+  //   width: 450px;
+  // }
+
+  .th-category-name {
+    font-size: 12px;
+  }
+  // .th-des {
+  //   width: 50px;
+  //   font-size: 20px
+  // }
+}
+
+// Small devices (landscape phones, 576px and up)
+@media (min-width: 576px) and (max-width: 767px) {
+  // .table {
+  //   width: 950px;
+  // }
+}
+
+// Medium devices (tablets, 768px and up)
+@media (min-width: 768px) and (max-width: 991px) { }
+
+// Large devices (desktops, 992px and up)
+@media (min-width: 992px) and (max-width: 1199px) { }
+
+// Extra large devices (large desktops, 1200px and up)
+@media (min-width: 1200px) { }
