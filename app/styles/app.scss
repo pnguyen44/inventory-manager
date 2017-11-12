@@ -160,11 +160,7 @@ td, th,{
   font-size: 20px;
 }
 .th-cart-info {
-  width: 14%;
-}
-
-.th-des-running-low {
-  width: 30%;
+  width: 13%;
 }
 
 .th-inventory-btn {
@@ -182,7 +178,12 @@ td, th,{
 .th-requested {
   width: 5%;
 }
-
+.th-running-low-des {
+  width: 30%;
+}
+.th-running-low-name {
+  width: 27%;
+}
 .th-view-btn{
   width: 10%;
 }
