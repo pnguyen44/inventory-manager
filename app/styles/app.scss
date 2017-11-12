@@ -117,7 +117,7 @@ div.image {
 }
 
 .tb-header {
-  background-color: $mainColor;
+  // background-color: $mainColor;
 }
 .table-category {
   // background-color: lightblue;
@@ -141,26 +141,40 @@ td, th,{
 }
 
 .th-btn {
-  width: 5%;
+  width:10%;
 }
 
 .th-des {
   width: 40%;
 }
 .th-name {
-  width: 30%;
+  width: 20%;
 }
 .th-category-name {
   font-size: 20px;
 }
 .th-cart-info {
-  width: 11%;
+  width: 14%;
 }
-.th-requested {
-  width: 5%;
+
+.th-des-running-low {
+  width: 30%;
+}
+
+.th-inventory-btn {
+    width: 5%;
+}
+.th-inventory-des {
+  width: 40%;
+}
+.th-invetory-name {
+  width: 30%;
 }
 .th-quant {
   width: 10%;
+}
+.th-requested {
+  width: 5%;
 }
 
 .th-view-btn{

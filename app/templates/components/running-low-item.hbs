@@ -5,16 +5,16 @@
         <th class='th-name th-category-name tb-header'>
           {{category.name}} ({{category.runningLowItemsCount}})
         </th>
-        <th class='th-des tb-header'></th>
+        <th class='th-des-running-low tb-header'></th>
         <th class='th-btn tb-header'></th>
         <th class='th-btn tb-header'></th>
         <th class='th-btn tb-header'></th>
         {{!-- <th class='th-quant'><button type='button' {{action 'toggleItemTable' category}}>{{buttonName}}</button></th> --}}
         {{#unless hide}}
           {{#if category.items.length}}
-            <th class='th-view-btn tb-header'><button class='btn btn-primary btn-xs' type='button' {{action 'toggleItemTable' category}}>{{buttonName}}</button></th>
+            <th class='th-cart-info tb-header'><button class='btn btn-primary btn-xs' type='button' {{action 'toggleItemTable' category}}>{{buttonName}}</button></th>
           {{else}}
-            <th class='th-vivew-btn tb-header'></th>
+            <th class='th-cart-info tb-header'></th>
           {{/if}}
         {{/unless}}
 
@@ -31,7 +31,7 @@
       <thead class='thead-inverse item-table-header'> --}}
         <tr>
           <th class='th-name tb-field'>Name</th>
-          <th class='th-des tb-field'>Description</th>
+          <th class='th-des-running-low tb-field'>Description</th>
           <th class='th-quant tb-field'>Current Quantity</th>
           <th class='th-btn tb-field'>Alert Quantity</th>
           <th class='th-btn tb-field'>Requested Quantity</th>
