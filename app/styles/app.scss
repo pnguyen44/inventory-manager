@@ -20,7 +20,7 @@ a {
   padding-top: 4px;
 }
 .content {
-  margin-top: 10px;
+  // margin-top: 0px;
 }
 .flash-message {
   margin-top: 50px;
@@ -108,13 +108,16 @@ div.image {
   background-color: #1385a9;
   color: white;
 }
-
+.page-header {
+  text-align: center;
+  font-size: 30px;
+}
 .table {
   border: 3px;
 }
 
 .tb-header {
-  // background-color: $mainColor;
+  background-color: $mainColor;
 }
 .table-category {
   // background-color: lightblue;
@@ -142,10 +145,10 @@ td, th,{
 }
 
 .th-des {
-  width: 50%;
+  width: 40%;
 }
 .th-name {
-  width: 25%;
+  width: 30%;
 }
 .th-category-name {
   font-size: 20px;
@@ -166,15 +169,25 @@ td, th,{
 // .th-view-hidden-btn  {
 //   width: 30%;
 // }
+.col-md-10 {
+  border: 1px solid black;
+}
 
 // Extra small devices (portrait phones, less than 576px)
 @media (max-width: 575px) {
-  // .table {
-  //   width: 450px;
-  // }
+    .table {
+      width: 650px;
+      font-size: 11px;
+      overflow-x: auto;
+    }
 
   .th-category-name {
-    font-size: 12px;
+    font-size: 14px;
+  }
+.page-header {
+    // margin-top: -2px;
+    text-align: left;
+    font-size: 20px;
   }
   // .th-des {
   //   width: 50px;
@@ -184,16 +197,22 @@ td, th,{
 
 // Small devices (landscape phones, 576px and up)
 @media (min-width: 576px) and (max-width: 767px) {
-  // .table {
-  //   width: 950px;
-  // }
+  .page-header {
+    // margin-top: 70px;
+  }
 }
 
 // Medium devices (tablets, 768px and up)
-@media (min-width: 768px) and (max-width: 991px) { }
+@media (min-width: 768px) and (max-width: 991px) {
+  .page-header {
+    // margin-top: 70px;
+  }
+}
 
 // Large devices (desktops, 992px and up)
-@media (min-width: 992px) and (max-width: 1199px) { }
+@media (min-width: 992px) and (max-width: 1199px) {
+
+ }
 
 // Extra large devices (large desktops, 1200px and up)
 @media (min-width: 1200px) { }

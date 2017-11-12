@@ -1,14 +1,14 @@
-<div class="col-md-10 col-md-offset-1">
+<div class="col-md-10 col-md-offset-1 col-sm-12">
 {{#if isSingleCategoryView}}
-<h1>{{category.name}} inventory list</h1>
+<div class='page-header'>{{category.name}} inventory list</div>
 {{/if }}
-<table class="table table-category">
+<table class="table table-category table-responsive table-striped">
  <thead class='thead-inverse'>
     <tr>
       {{#if removeLink}}
         <th class='th-name th-category-name tb-header'>{{category.name}} ({{category.items.length}}) </th>
         {{else}}
-        <th class='th-name th-category-name tb-header'>{{#link-to 'category' category}}{{category.name}} ({{category.items.length}}) {{/link-to}}</th>
+        <th class='th-name th-category-name tb-header'>{{#link-to 'category' category}}{{category.name}} ({{category.items.length}}){{/link-to}}</th>
       {{/if}}
       <th class='th-des tb-header'></th>
       {{!-- <th class='th-quant'><button type='button' {{action 'toggleItemTable' category}}>{{buttonName}}</button></th> --}}
