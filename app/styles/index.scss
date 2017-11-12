@@ -240,6 +240,7 @@
 // }
 
 $mainColor: #92d3e5;
+$navBarColor: #101010;
 
 #services {
   // border: 1px solid;
@@ -449,7 +450,7 @@ body {
         color: $mainColor;
       }
       header.masthead .btn-header {
-        background-color: black;
+        background-color: $navBarColor;
       }
 
 @media (min-width: 768px) {
