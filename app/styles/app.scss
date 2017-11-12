@@ -13,6 +13,10 @@ a {
   a:hover {
     color: darkblue; }
 
+  .add-category-btn {
+      margin: 40px 0 20px;
+  }
+
 .category-wrapper {
   background-color: lightgrey;
   height: 37px;
@@ -20,7 +24,7 @@ a {
   padding-top: 4px;
 }
 .content {
-  // margin-top: 0px;
+  // margin-tosp: 50px;
 }
 .flash-message {
   margin-top: 50px;
@@ -95,15 +99,15 @@ div.image {
 .modal-title {
   font-size: 18px;
 }
-.name-container {
-  padding-top: 40px;
-  border: 1px solid;
-  border-style: groove;
-  width: 500px;
-  height: 200px;
-  margin: auto 0;
-  content: attr('');
-}
+// .name-container {
+//   padding-top: 40px;
+//   border: 1px solid;
+//   border-style: groove;
+//   width: 500px;
+//   height: 200px;
+//   margin: auto 0;
+//   content: attr('');
+// }
 .navbar {
   background-color: #1385a9;
   color: white;
@@ -112,10 +116,11 @@ div.image {
   text-align: center;
   font-size: 30px;
   margin-top: 23px;
+  border: none;
 }
-.table {
-  border: 3px;
-}
+// .table {
+//   border: 3px;
+// }
 
 .tb-header {
   background-color: $mainColor;
@@ -204,16 +209,18 @@ td, th,{
     text-align: left;
     font-size: 20px;
   }
-  // .th-des {
-  //   width: 50px;
-  //   font-size: 20px
-  // }
+  .add-category-btn {
+    margin: 80px 0 30px;
+  }
 }
 
 // Small devices (landscape phones, 576px and up)
 @media (min-width: 576px) and (max-width: 767px) {
   .page-header {
     margin-top: 70px;
+  }
+  .add-category-btn {
+    margin: 81px 0 20px;
   }
 }
 
@@ -222,10 +229,16 @@ td, th,{
   .page-header {
     margin-top: 70px;
   }
+  .add-category-btn {
+      margin: 87px 0 20px;
+  }
 }
 
 // Large devices (desktops, 992px and up)
 @media (min-width: 992px) and (max-width: 1199px) {
+  // .add-category-btn {
+  //     margin: 40px 0 20px;
+  // }
 
  }
 
