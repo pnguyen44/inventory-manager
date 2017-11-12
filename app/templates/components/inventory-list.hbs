@@ -14,9 +14,9 @@
       {{!-- <th class='th-quant'><button type='button' {{action 'toggleItemTable' category}}>{{buttonName}}</button></th> --}}
       {{#unless hide}}
         {{#if category.items.length}}
-        <th class='th-btn tb-header'><button class='btn btn-primary btn-xs' type='button' {{action 'toggleItemTable' category}}>{{buttonName}}</button></th>
+        <th class='th-view-btn tb-header'><button class='btn btn-primary btn-xs' type='button' {{action 'toggleItemTable' category}}>{{buttonName}}</button></th>
           {{else}}
-          <th class='th-btn tb-header'></th>
+          <th class='th-view-btn tb-header'></th>
         {{/if}}
         {{else}}
         <th class='th-btn tb-header'></th>
