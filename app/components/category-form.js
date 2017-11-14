@@ -20,6 +20,9 @@ export default Ember.Component.extend({
       }
       this.sendAction('createCategory', this.get('newCategoryToAdd'));
       this.set('newCategoryToAdd.name', null);
-    }
+    },
+    clearItemForm() {
+      this.set('newCategoryToAdd', {});
+    },
   }
 });
