@@ -102,15 +102,7 @@ div.image {
 .modal-title {
   font-size: 18px;
 }
-// .name-container {
-//   padding-top: 40px;
-//   border: 1px solid;
-//   border-style: groove;
-//   width: 500px;
-//   height: 200px;
-//   margin: auto 0;
-//   content: attr('');
-// }
+
 .navbar {
   background-color: #1385a9;
   color: white;
@@ -121,18 +113,12 @@ div.image {
   margin-top: 23px;
   border: none;
 }
-// .table {
-//   border: 3px;
-// }
+
 
 .tb-header {
   background-color: $mainColor;
 }
-.table-category {
-  // background-color: lightblue;
-    // background-color: #92d3e5;
-//   margin-bottom: -3px;
-}
+
 .table-item {
     margin-top: -21px;
 }
@@ -190,12 +176,7 @@ td, th,{
 .th-view-btn{
   width: 10%;
 }
-// .th-view-hidden-btn  {
-//   width: 30%;
-// }
-// .col-md-10 {
-//   border: 1px solid black;
-// }
+
 
 // Extra small devices (portrait phones, less than 576px)
 @media (max-width: 575px) {
@@ -237,14 +218,3 @@ td, th,{
       margin: 87px 0 20px;
   }
 }
-
-// Large devices (desktops, 992px and up)
-@media (min-width: 992px) and (max-width: 1199px) {
-  // .add-category-btn {
-  //     margin: 40px 0 20px;
-  // }
-
- }
-
-// Extra large devices (large desktops, 1200px and up)
-@media (min-width: 1200px) { }
