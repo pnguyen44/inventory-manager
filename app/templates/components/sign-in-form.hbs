@@ -1,10 +1,17 @@
+{{!-- <form> --}}
 {{email-input email=credentials.email}}
 {{password-input password=credentials.password}}
 
+<br>
+<div class='form-btn'>
 <button type="submit" class="btn btn-primary" {{action "submit"}}>
   Sign In
 </button>
-
 <button class="btn btn-default" {{action "reset"}}>
   Cancel
 </button>
+</div>
+<div class='register-link'>
+  Not registered,{{#link-to 'sign-up'}} click here{{/link-to}} to sign up
+</div>
+{{!-- </form> --}}

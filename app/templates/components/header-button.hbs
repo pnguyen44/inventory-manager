@@ -1,0 +1,6 @@
+{{#if isAuthenticated}}
+<div class="btn btn-header btn-xl text-uppercase js-scroll-trigger">{{#link-to 'categories'}}{{text}}{{/link-to}}</div>
+{{else}}
+<div class="btn btn-header btn-xl text-uppercase js-scroll-trigger">{{#link-to 'sign-in'}}{{text}}{{/link-to}}</div>
+{{/if}}
+{{!-- <div class="btn btn-primary btn-header btn-xl text-uppercase js-scroll-trigger">{{#link-to '{{linkToText}}'}}{{text}}{{/link-to}}</div> --}}

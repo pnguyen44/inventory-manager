@@ -1,5 +1,7 @@
-<h1>Order List</h1>
+<div class="col-md-10 col-md-offset-1 content">
+<div class='page-header'>Order List</div>
 {{!-- <h1>{{model.length}}</h1> --}}
 {{#each model as |category|}}
 {{order-list-listing orderListView=true category=category item=item editRequestedQty='editRequestedQty' removeFromOrderList='removeFromOrderList' sendToInventory='sendToInventory'}}
 {{/each}}
+</div>

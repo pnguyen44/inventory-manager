@@ -1,5 +1,21 @@
 @import 'bootstrap';
 @import 'bootstrap/theme';
+// @import "masthead.scss";
+@import 'index';
+// @import 'font-awesome.min.css'
+$mainColor: #92d3e5;
+$navBarColor: #101010;
+
+a {
+  color: blue;
+  // text-decoration-style: solid;
+ }
+  a:hover {
+    color: darkblue; }
+
+  .add-category-btn {
+      margin: 40px 0 20px;
+  }
 
 .category-wrapper {
   background-color: lightgrey;
@@ -8,7 +24,14 @@
   padding-top: 4px;
 }
 .content {
-  margin-top: 60px;
+  // margin-tosp: 50px;
+}
+.flash-message {
+  margin-top: 50px;
+}
+footer {
+  background-color: black;
+  color: white;
 }
 .flash-message {
   margin-top: 50px;
@@ -16,6 +39,38 @@
 // .container-box {
 //   width: 75%;
 // }
+.form-box {
+  padding: 0 18px 33px;
+  margin-top: 70px;
+  // margin-left: 40px;
+  // margin-right: 40px;
+  border: 1px solid $navBarColor;
+  // padding: 0 100px;
+  // width: 50%;
+  // background-color: $mainColor;
+  // background-color: #323232;
+  color: black;
+}
+.form-box input {
+  // background-color: lightblue;
+}
+.form-box a {
+  color: red;
+}
+form {
+  padding: 0 18px 33px;
+  // background-color: lightblue;
+}
+.form-btn {
+  float: right;
+}
+.fa {
+  color: white;
+}
+.form-box .btn {
+  margin-left: 10px;
+  // float: right;
+}
 h1, h4 {
   text-align: center;
 }
@@ -39,38 +94,55 @@ div.image {
 .message {
   color: red;
 }
+
+.modal-content {
+  color: black;
+  // background-color:  #323232;
+}
 .modal-title {
   font-size: 18px;
 }
-.name-container {
-  padding-top: 40px;
-  border: 1px solid;
-  border-style: groove;
-  width: 500px;
-  height: 200px;
-  margin: auto 0;
-  content: attr('');
-}
+// .name-container {
+//   padding-top: 40px;
+//   border: 1px solid;
+//   border-style: groove;
+//   width: 500px;
+//   height: 200px;
+//   margin: auto 0;
+//   content: attr('');
+// }
 .navbar {
   background-color: #1385a9;
   color: white;
 }
-
-.table {
-  border: 3px;
+.page-header {
+  text-align: center;
+  font-size: 30px;
+  margin-top: 23px;
+  border: none;
 }
+// .table {
+//   border: 3px;
+// }
 
+.tb-header {
+  background-color: $mainColor;
+}
 .table-category {
   // background-color: lightblue;
-    background-color: #92d3e5;
+    // background-color: #92d3e5;
 //   margin-bottom: -3px;
 }
 .table-item {
     margin-top: -21px;
 }
-.table-item td, .table-item th, .item-table-header{
+.tb-field {
+  background-color: #edf1f7;
+}
+td, th,{
   border: 1px solid;
-  border-color: lightblue;
+  // background-color: lightgrey;
+  border-color: $mainColor;
 }
 
 .th {
@@ -78,28 +150,101 @@ div.image {
 }
 
 .th-btn {
-  width: 5%;
+  width:8%;
 }
 
 .th-des {
-  width: 35%;
+  width: 40%;
 }
 .th-name {
-  width: 25%;
+  width: 20%;
 }
 .th-category-name {
   font-size: 20px;
 }
 .th-cart-info {
-  width: 11%;
+  width: 13%;
 }
-.th-requested {
-  width: 5%;
+
+.th-inventory-btn {
+    width: 5%;
+}
+.th-inventory-des {
+  width: 40%;
+}
+.th-invetory-name {
+  width: 30%;
 }
 .th-quant {
   width: 10%;
 }
-
-.th-view-btn{
-  width: 7%;
+.th-requested {
+  width: 5%;
 }
+.th-running-low-des {
+  width: 30%;
+}
+.th-running-low-name {
+  width: 27%;
+}
+.th-view-btn{
+  width: 10%;
+}
+// .th-view-hidden-btn  {
+//   width: 30%;
+// }
+// .col-md-10 {
+//   border: 1px solid black;
+// }
+
+// Extra small devices (portrait phones, less than 576px)
+@media (max-width: 575px) {
+    .table {
+      width: 650px;
+      font-size: 11px;
+      overflow-x: auto;
+    }
+
+  .th-category-name {
+    font-size: 14px;
+  }
+.page-header {
+    margin-top: 74px;
+    text-align: left;
+    font-size: 20px;
+  }
+  .add-category-btn {
+    margin: 80px 0 30px;
+  }
+}
+
+// Small devices (landscape phones, 576px and up)
+@media (min-width: 576px) and (max-width: 767px) {
+  .page-header {
+    margin-top: 70px;
+  }
+  .add-category-btn {
+    margin: 81px 0 20px;
+  }
+}
+
+// Medium devices (tablets, 768px and up)
+@media (min-width: 768px) and (max-width: 991px) {
+  .page-header {
+    margin-top: 70px;
+  }
+  .add-category-btn {
+      margin: 87px 0 20px;
+  }
+}
+
+// Large devices (desktops, 992px and up)
+@media (min-width: 992px) and (max-width: 1199px) {
+  // .add-category-btn {
+  //     margin: 40px 0 20px;
+  // }
+
+ }
+
+// Extra large devices (large desktops, 1200px and up)
+@media (min-width: 1200px) { }

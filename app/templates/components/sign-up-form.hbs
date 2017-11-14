@@ -1,7 +1,8 @@
 {{email-input email=credentials.email}}
 {{password-input password=credentials.password}}
 {{password-confirmation-input password=credentials.passwordConfirmation}}
-
+<br>
+<div class='form-btn'>
 <button type="submit" class="btn btn-primary" {{action "submit"}}>
   Sign Up
 </button>
@@ -9,3 +10,4 @@
 <button class="btn btn-default" {{action "reset"}}>
   Cancel
 </button>
+</div>

@@ -1,6 +1,14 @@
 {{!-- <h1>Categories</h1> --}}
-{{category-form createCategory="createCategory"}}
-<br>
+
+<div class="content">
+<div class="col-md-10 col-md-offset-1">
+  {{!-- <div class='page-header's>Inventory</div> --}}
+  <div class='add-category-btn'>
+  {{category-form createCategory="createCategory"}}
+</div>
+</div>
+{{!-- <br> --}}
+
 {{#unless model.length}}
   <h4>You don't have any category. Please add some.</h4>
 {{/unless}}
@@ -10,3 +18,4 @@
 {{!-- {{#each model as |category|}}
   {{item-list category=category}} --}}
 {{/each}}
+</div>
