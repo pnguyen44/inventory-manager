@@ -31,7 +31,7 @@ export default Ember.Component.extend({
         this.set('message', 'Name required')
         Ember.$('.message').delay(1300).fadeOut('slow')
       }
-      this.set('newItem', {});
+      // this.set('newItem', {});
     },
     clearItemForm() {
       this.set('newItem', {});
