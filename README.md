@@ -1,5 +1,5 @@
 # Inventory Manager
-The Inventory Manager app was created using HTML, Ruby on Rails, CSS/SASS, Ember, Javascript, Handlebars and Bootstrap. This app allows users to create an inventory of items, track if the items are running low, put them in order list, and add them back to inventory list.
+A full stack app that allows users to create a list of categories and items, track items that are running low, add running low items to the order list, and return those items to the inventory.  This app was created using  Ruby on Rails, Ember.js, JavaScript, Handlebars, Bootstrap, HTML, and CSS/SASS.
 
 <img width="1440" alt="inventory app" src="https://user-images.githubusercontent.com/26861466/32486500-cfa47522-c374-11e7-8e72-6e8efff3f658.png">
 
