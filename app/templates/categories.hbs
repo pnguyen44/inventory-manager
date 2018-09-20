@@ -1,21 +1,22 @@
 {{!-- <h1>Categories</h1> --}}
 
 <div class="content">
-<div class="col-md-10 col-md-offset-1">
-  {{!-- <div class='page-header's>Inventory</div> --}}
-  <div class='add-category-btn'>
-  {{category-form createCategory="createCategory"}}
-</div>
-</div>
-{{!-- <br> --}}
+  <div class="col-md-10 col-md-offset-1">
+    {{!-- <div class='page-header's>Inventory</div> --}}
+    <div class='add-category-btn'>
+      {{category-form createCategory="createCategory"}}
+    </div>
+  </div>
+  {{!-- <br> --}}
 
-{{#unless model.length}}
-  <h4>You don't have any category. Please add some.</h4>
-{{/unless}}
-{{!-- <h1>{{model}}</h1> --}}
-{{#each model as |category|}}
-{{inventory-list category=category editCategory='editCategory' deleteCategory='deleteCategory' createItem='createItem' deleteItem='deleteItem' editItem='editItem'}}
-{{!-- {{#each model as |category|}}
+  {{#unless model.length}}
+    <div class="col-md-12">
+      <h4>You don't have any category. Please add some.</h4>
+    </div>
+  {{/unless}}
+  {{!-- <h1>{{model}}</h1> --}}
+  {{#each model as |category|}}
+    {{!-- {{#each model as |category|}}
   {{item-list category=category}} --}}
-{{/each}}
+  {{/each}}
 </div>
